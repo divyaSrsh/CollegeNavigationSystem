@@ -1,17 +1,14 @@
-import React from 'react'
-// import  BasicMap  from  '../components/CetMap'
-
+import React, {useState} from "react";
 import 'leaflet/dist/leaflet.css';
 import { MapContainer, TileLayer,Marker,Popup, useMap } from 'react-leaflet'
-// import { MapContainer } from 'https://cdn.esm.sh/react-leaflet/MapContainer'
-// import { TileLayer } from 'https://cdn.esm.sh/react-leaflet/TileLayer'
-import { Routes, Route} from "react-router-dom";
-function Home() {
-  return (
-    <div className='homee'>
-    <h1>basiccc</h1>
-       <div>
-           {/* <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+import osm from "./osm_providers";
+import { useRef } from "react";
+
+function CetMap () {
+
+    return (
+        <div>
+           <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -21,12 +18,10 @@ function Home() {
                 A pretty CSS3 popup. <br /> Easily customizable.
                 </Popup>
             </Marker>
-            </MapContainer> */}
+            </MapContainer>
             
         </div>
-       <h1>basiccc</h1>
-    </div>
-  )
-}
+    );
+};
 
-export default Home;
+export default CetMap;
