@@ -1,0 +1,11 @@
+
+1.installed github desktop  and created  git repo
+
+2.react bootstrap install
+
+https://react-bootstrap.github.io/getting-started/introduction/
+
+npm install react-bootstrap bootstrap   --save
+npm install react-bootstrap@1.5.2
+
+npm install react-leaflet leaflet --save
