@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from '../assets/pizzaLogo.png';
 import {Navbar,Container,Nav,NavDropdown,Button,Form} from "react-bootstrap";
 
-function Navigationbar() {
+const  Navigationbar=() => {
   return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container>
