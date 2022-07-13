@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import location from "../assets/location.png"
-import { addressPoints } from "./addressPoints";
+
 
 function CetMap() {
   useEffect(() => {
