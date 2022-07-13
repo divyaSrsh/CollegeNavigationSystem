@@ -1,49 +1,38 @@
-// import React, {useState} from "react";
-// import 'leaflet/dist/leaflet.css';
-// import { MapContainer, TileLayer,Marker,Popup, useMap } from 'react-leaflet'
-// import osm from "./osm_providers";
-// import { useRef } from "react";
+import React, { useEffect } from "react";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+import location from "../assets/location.png"
+import { addressPoints } from "./addressPoints";
 
-// function CetMap () {
+function CetMap() {
+  useEffect(() => {
+    var map = L.map("map").setView([8.54619, 76.9062001], 18.5);
 
-//     return (
-//         <div>
-//            <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-//             <TileLayer
-//                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-//                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-//             />
-//             <Marker position={[51.505, -0.09]}>
-//                 <Popup>
-//                 A pretty CSS3 popup. <br /> Easily customizable.
-//                 </Popup>
-//             </Marker>
-//             </MapContainer>
-            
-//         </div>
-//     );
-// };
-
-// export default CetMap;
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
 
-import React from "react";
-import { Map, MapContainer, TileLayer } from "react-leaflet";
+    var myIcon = L.icon({
+      iconUrl:location,
+      iconSize: [20, 20]
+  });
+  
+  L.marker([8.545684428,76.9040217], {icon: myIcon}).addTo(map);
+    ///L.marker([8.545684428,76.9040217], {icon:pointing}).addTo(map).bindPopup("Conference_Hall");
 
-const CetMap = () =>{
-  const position = [1.35, 103.8];
+    //const points = addressPoints
+  //     ? addressPoints.map((p) => {
+  //         return [p[0], p[1]];
+  //       })
+  //     : [];
+
+  //   L.heatLayer(points).addTo(map);
+  }, []);
+
   return (
-    <MapContainer
-      className="map"
-      center={position}
-      zoom={10}
-      style={{ height: 500, width: "100%" }}
-    >
-      <TileLayer
-        attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-    </MapContainer>
+  <div id="map" style={{ height: "100vh" }}></div>
   );
 }
 

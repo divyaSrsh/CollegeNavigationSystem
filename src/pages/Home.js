@@ -1,17 +1,32 @@
-import React from 'react'
-// import  BasicMap  from  '../components/CetMap'
-import { MapContainer, TileLayer,Marker,Popup, useMap } from   'react-leaflet';
-// import { MapContainer } from 'https://cdn.esm.sh/react-leaflet/MapContainer'
-// import { TileLayer } from 'https://cdn.esm.sh/react-leaflet/TileLayer'
-import 'leaflet/dist/leaflet.css';
+import React from "react";
+import "leaflet/dist/leaflet.css";
+import CetMap from "../components/CetMap";
 
-function Home(){
+import {Nav,Button,Form} from "react-bootstrap";
+
+function Home() {
   return (
-
-    <div>
-    <h6>Helllllo home</h6>
-  </div>
-  )
+    <div className="map-container">
+      <div className="map"> 
+      <CetMap />
+        </div>
+      <div className="search-bar">
+      <Nav >
+        <Form >
+          <Form.Control
+            type="search"
+            placeholder="Search"
+            className="me-2"
+            aria-label="Search"
+          />
+          <Button variant="outline-success">Search</Button>
+        </Form>
+      </Nav>
+      </div>
+      
+      
+    </div>
+  );
 }
 
 export default Home;

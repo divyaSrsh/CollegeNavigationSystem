@@ -1,3 +1,7 @@
+*{
+  all:none;
+}
+
 .leaflet-container {
     width: 100wh; 
     height: 100vh;
@@ -5,4 +9,15 @@
 .homee{
     background-color: black;
     color: beige;
+}
+
+.map-container{
+  position:relative;
+}
+.search-bar {
+  position: absolute;
+  top: 50px;
+  left: 16px;
+  font-size: 18px;
+  z-index: 10;
 }

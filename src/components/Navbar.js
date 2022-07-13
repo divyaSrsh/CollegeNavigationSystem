@@ -1,8 +1,22 @@
-import React from 'react'
-import Logo from '../assets/pizzaLogo.png';
+import React,{useState} from 'react'
 import {Navbar,Container,Nav,NavDropdown,Button,Form} from "react-bootstrap";
 
 const  Navigationbar=() => {
+
+  const [value, setValue] = useState('');
+  const onChange = (event) => {
+    setValue(event.target.value);
+    console.log(value)
+  };
+
+
+const onSubmit = (event) => {
+  event.preventDefault(); // Prevent default submission
+  
+  console.log('Your registration was successfully submitted!');
+  console.log("hello")
+   
+}
   return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container>
@@ -10,12 +24,13 @@ const  Navigationbar=() => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-            <Form className="d-flex">
+            <Form className="d-flex" onSubmit={onSubmit}>
             <Form.Control
               type="search"
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              onChange={onChange}
             />
             <Button variant="outline-success">Search</Button>
           </Form>

@@ -77,3 +77,7 @@ typings/
 
 #for understanding
 *.txt
+
+bundle_error@64951.js
+
+package-lock.json
