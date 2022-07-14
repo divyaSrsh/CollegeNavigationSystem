@@ -83,6 +83,7 @@ async function get_paths(x = 'CS_109', y='CS_302'){
 // 	return result; 
 //    });
 
+// export {get_paths}
 // export default get_paths;
 (async() => {
 	console.log(await get_paths('CS_302', 'CS_117'));
