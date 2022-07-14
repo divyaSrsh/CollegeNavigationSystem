@@ -5,6 +5,7 @@
 .leaflet-container {
     width: 100wh; 
     height: 100vh;
+   
   }
 .homee{
     background-color: black;
@@ -16,8 +17,13 @@
 }
 .search-bar {
   position: absolute;
-  top: 50px;
+  top: 10px;
   left: 16px;
   font-size: 18px;
   z-index: 10;
+}
+
+.left-sidebar{
+  width: 30wh; 
+  height: 100vh;
 }

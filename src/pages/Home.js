@@ -6,23 +6,11 @@ import {Nav,Button,Form} from "react-bootstrap";
 
 function Home() {
   return (
-    <div className="map-container">
+    <div >
       <div className="map"> 
       <CetMap />
         </div>
-      <div className="search-bar">
-      <Nav >
-        <Form >
-          <Form.Control
-            type="search"
-            placeholder="Search"
-            className="me-2"
-            aria-label="Search"
-          />
-          <Button variant="outline-success">Search</Button>
-        </Form>
-      </Nav>
-      </div>
+     
       
       
     </div>

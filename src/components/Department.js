@@ -4,7 +4,7 @@ import location from "../assets/location.png"
 import data  from "../assets/cet_main.json"
 import {Nav,Button,Form} from "react-bootstrap";
 
-const CetMap= () => {
+const DeptMap= (props) => {
   // Map state:
   const [mapInstance, setMapInstance] = useState(null);
   const [marker, setMarker] = useState(null);
@@ -26,10 +26,12 @@ const CetMap= () => {
 
   // Options for our map instance:
   const mapParams = {
-    center:[8.54524 ,76.90539 ],
+    center:[8.54715, 76.90679], 
     zoom:  18.5,
-    zoomControl: true,
+    zoomControl: false,
     zoomSnap: 0.75,
+    maxBounds: L.latLngBounds(L.latLng(-150, -240), L.latLng(150, 240)),
+    closePopupOnClick: false,
     layers: [tileRef.current], // Start with just the base layer
   };
 
@@ -66,10 +68,8 @@ const CetMap= () => {
                 iconSize: [50, 50]
             });
             markerRef.current = L.marker([x,y], {icon: myIcon}).addTo(mapInstance);
-            mapRef.current = mapInstance.setView([x,y],20)
-            // Set map instance to state:
-            setMapInstance(mapRef.current);
-                }
+            mapInstance.setView([x,y], 25);
+         }
          else{
             alert("no such building")
          }
@@ -82,8 +82,11 @@ const CetMap= () => {
   };
 
   return (
-    <div className="map-container">
-     <div  >
+    <div>
+      <div className='left-sidebar'>
+        <h1>hello</h1>
+      </div>
+     <div>
      <Nav className="me-auto">
          <Form className="d-flex" >
          <Form.Control
@@ -105,4 +108,4 @@ const CetMap= () => {
   );
 };
 
-export default CetMap;
+export default DeptMap;

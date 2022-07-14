@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Login  from  "./pages/Login";
 import Navigationbar from "./components/Navbar";
 import {  BrowserRouter as Router,  Routes ,Route } from "react-router-dom"
+import DeptMap from "./components/Department";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
        < Routes >
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login/>} />
+          <Route path="/dept" element={<DeptMap/>} />
         </ Routes  > 
           
 
