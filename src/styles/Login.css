@@ -1,0 +1,40 @@
+.login-body{
+    position: fixed;
+    background: black;
+    top: 23px;;
+    right:0;
+    left:0;
+    bottom:0;
+    margin-top: 45px;
+ }
+ 
+ .login-main{
+    background: black;
+    height: 640px;
+    margin: 0;
+    padding: 0;
+ }
+ .icon-img{
+     width: 70px;
+     height: 70px;
+     margin-bottom: 2rem;
+     display: block;
+     margin-left:10rem ;
+ }
+ 
+ .btn-primary{
+     color: black;
+     background-color: #43a15d !important;
+     border-color: #43a15d !important;
+ }
+ 
+ .reset{
+     color: white;
+     
+ }
+ 
+ .text-left{
+     display: flex;
+     justify-content: space-between;
+     text-decoration-line: none;
+ }

@@ -3,6 +3,7 @@ import L from 'leaflet';
 import location from "../assets/location.png"
 import data  from "../assets/cet_main.json"
 import {Nav,Button,Form} from "react-bootstrap";
+import  "../styles/CetMap.css";
 
 const CetMap= () => {
   // Map state:
@@ -82,26 +83,26 @@ const CetMap= () => {
   };
 
   return (
-    <div className="map-container">
-     <div  >
-     <Nav className="me-auto">
-         <Form className="d-flex" >
-         <Form.Control
-           type="search"
-           placeholder="Search"
-           className="me-2"
-           aria-label="Search"
-           onChange={onChange}
-         />
-         <Button variant="outline-success" onClick={handleClick}>Search</Button>
-       </Form>
+    <div className=" map-container">
+      <div  className='search-btn '>
+        <Nav className="me-auto">
+          <Form className="d-flex" >
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+              onChange={onChange}
+            />
+            <Button className='search-side-btn'  variant="outline-success" onClick={handleClick}>Search</Button>
+          </Form>
            
-         </Nav>
+        </Nav>
      </div>
      
      <div id="map" ></div>
 
- </div>
+  </div>
   );
 };
 
