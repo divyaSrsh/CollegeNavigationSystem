@@ -26,4 +26,8 @@
 .left-sidebar{
   width: 30wh; 
   height: 100vh;
+  color:white;
+  background-color: rgb(54, 148, 108);
+  padding: 7px;
+  margin-left:3px;
 }

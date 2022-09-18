@@ -2,11 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import location from "../assets/location.png"
 import data  from "../assets/cet_main.json"
-import {Nav,Button,Form,Col,Row} from "react-bootstrap";
+import {Nav,Button,Form} from "react-bootstrap";
+import  "../styles/CetMap.css";
 
-
-
-const DeptMap= (props) => {
+const CetMap= () => {
   // Map state:
   const [mapInstance, setMapInstance] = useState(null);
   const [marker, setMarker] = useState(null);
@@ -28,12 +27,10 @@ const DeptMap= (props) => {
 
   // Options for our map instance:
   const mapParams = {
-    center:[8.54715, 76.90679], 
+    center:[8.54524 ,76.90539 ],
     zoom:  18.5,
-    zoomControl: false,
+    zoomControl: true,
     zoomSnap: 0.75,
-    maxBounds: L.latLngBounds(L.latLng(-150, -240), L.latLng(150, 240)),
-    closePopupOnClick: false,
     layers: [tileRef.current], // Start with just the base layer
   };
 
@@ -70,8 +67,10 @@ const DeptMap= (props) => {
                 iconSize: [50, 50]
             });
             markerRef.current = L.marker([x,y], {icon: myIcon}).addTo(mapInstance);
-            mapInstance.setView([x,y], 25);
-         }
+            mapRef.current = mapInstance.setView([x,y],20)
+            // Set map instance to state:
+            setMapInstance(mapRef.current);
+                }
          else{
             alert("no such building")
          }
@@ -83,78 +82,26 @@ const DeptMap= (props) => {
     setValue(event.target.value);
   };
 
-
-
-/** 
-const SideBar = () => {
   return (
-      <CDBSidebar>
-        <CDBSidebarHeader prefix={<i className="fa fa-bars" />}>Contrast</CDBSidebarHeader>
-        <CDBSidebarContent>
-          <CDBSidebarMenu>
-            <CDBSidebarMenuItem icon="th-large">Dashboard</CDBSidebarMenuItem>
-            <CDBSidebarMenuItem icon="sticky-note">Components</CDBSidebarMenuItem>
-            <CDBSidebarMenuItem icon="credit-card" iconType="solid">
-              Metrics
-            </CDBSidebarMenuItem>
-          </CDBSidebarMenu>
-        </CDBSidebarContent>
-
-        <CDBSidebarFooter style={{ textAlign: 'center' }}>
-          <div
-            className="sidebar-btn-wrapper"
-            style={{padding: '20px 5px'}}
-          >
-            Sidebar Footer
-          </div>
-        </CDBSidebarFooter>
-      </CDBSidebar>
-  );
-
-
-export default Sidebar;*/
-  return (
-    <div>
-      
-     <Row>
-      <Col md="auto">
-      <div className='left-sidebar'>
-        <Row>
-        <p>CS</p>
-        </Row>
-        <Row>
-        <p>Civil</p>
-        </Row>
-        <Row>
-        <p>Mech</p>
-        </Row>
-        <Row>
-        <p>IE</p>
-        </Row>
-        
-      </div>
-     
-     </Col>   
-     <Col >
-     <Nav className="me-auto">
-         <Form className="d-flex" >
-         <Form.Control
-           type="search"
-           placeholder="Search"
-           className="me-2"
-           aria-label="Search"
-           onChange={onChange}
-         />
-         <Button variant="outline-success" onClick={handleClick}>Search</Button>
-       </Form>
+    <div className=" map-container">
+      <div  className='search-btn '>
+        <Nav className="me-auto">
+          <Form className="d-flex" >
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+              onChange={onChange}
+            />
+            <Button className='search-side-btn'  variant="outline-success" onClick={handleClick}>Search</Button>
+          </Form>
            
-         </Nav>
+        </Nav>
+     </div>
+     
      <div id="map" ></div>
-     </Col>  
-    </Row>
 
- </div>
+  </div>
   );
 };
-
-export default DeptMap;
