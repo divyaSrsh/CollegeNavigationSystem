@@ -4,12 +4,12 @@
 
 .leaflet-container {
     width: 100wh; 
-    height: 100vh;
-   
+    height: 88vh; 
   }
 .home{
     background-color: #000814;
     color: #CAF0F8;
+    
 }
 
 .map-container{

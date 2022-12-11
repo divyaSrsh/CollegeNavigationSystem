@@ -1,7 +1,7 @@
 .navbar {
   width: 100%;
   height: 100%;
-  background-color: rgb(35, 42, 179)!important;
+  background-color: #05386B;
   display: flex;
   flex-direction: row;
   font-family: 'Ibarra Real Nova', serif;
@@ -14,8 +14,12 @@
   align-items: left;
   padding-left: 50px;
   font-size: 30px;
-  color: #ffe8d6!important; 
+  /* color: #ffe8d6!important;  */
   
+}
+
+.navbar .leftSide.navbar-brand {
+  color: #EDF5E1!important;
 }
 
 .drop-down{
@@ -23,8 +27,45 @@
   color:aquamarine;
 }
 
+.nav-sec{
+  cursor: pointer;
+}
 
-.navbar .rightSide {
+.dept-nav{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100px;
+  right: 10px;
+  z-index: 1000;
+  border: 2px solid ;
+  background-color: #05386B;
+  color: #EDF5E1;
+  width: 200px;
+  height:125px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dept-nav input {
+  width: 90%;
+}
+
+.dept-nav-btn button{
+  border-radius: 5px;
+  border-color: #05386B;
+  background-color: #379683;
+  color: #EDF5E1;
+  padding: 5px 14px;
+  margin: 2px 2px;
+}
+
+.dept-nav-loc{
+  margin: 4px;
+}
+
+
+.rightSide {
   flex: 50%;
   height: 100%;
   display: flex;
@@ -32,7 +73,15 @@
   justify-content: space-around;
   font-size: 20px;
   font-display: bold;
-  color: #ffe8d6 !important;  
+  color: #ffe8d6!important;  
+}
+
+.navbar-light .navbar-nav .nav-link{
+  color: #EDF5E1!important;
+}
+
+.navbar-light .navbar-toggler-icon {
+  filter: invert(98%) sepia(1%) saturate(276%) hue-rotate(298deg) brightness(117%) contrast(100%)
 }
 
 /* .navbar a {

@@ -5,6 +5,10 @@ import Login  from  "./pages/Login";
 import Navigationbar from "./components/Navbar";
 import {  BrowserRouter as Router,  Routes ,Route } from "react-router-dom"
 import DeptMap from "./components/Department";
+import Mca from "./pages/Mca";
+import Cse from "./pages/Cse";
+import Civil from "./pages/Civil";
+import Eee from "./pages/Eee";
 
 
 function App() {
@@ -15,9 +19,12 @@ function App() {
         <Navigationbar/>
        < Routes >
           <Route path="/" element={<Home />} />
+          <Route path="/MCA" element={<Mca/>} />
+          <Route path="/CSE" element={<Cse/>} />
+          <Route path="/CIVIL" element={<Civil/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/dept" element={<DeptMap/>} />
-          <Route path="/civil" element={<DeptMap/>} />
+          <Route path="/EEE" element={<Eee/>} />
         </ Routes  > 
           
 

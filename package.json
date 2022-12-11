@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.10.17",
     "@react-leaflet/core": "^2.0.0",
     "bootstrap": "^5.1.3",
     "cdbreact": "^1.5.3",
@@ -11,8 +14,8 @@
     "neo4j-driver": "^4.4.6",
     "pg": "^8.7.3",
     "react-bootstrap": "^1.5.2",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "0.9.5"
+    "react-router-dom": "^6.4.4",
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -21,9 +24,22 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "file-loader": "^6.2.0",
     "leaflet": "^1.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

@@ -30,11 +30,11 @@ const DeptMap= (props) => {
 
   // Options for our map instance:
   const mapParams = {
-    center:[8.54715, 76.90679], 
-    zoom:  18.5,
+    center:[8.54578,76.90394], 
+    zoom:  30,
     zoomControl: false,
     zoomSnap: 0.75,
-    maxBounds: L.latLngBounds(L.latLng(-150, -240), L.latLng(150, 240)),
+    maxBounds: L.latLngBounds(L.latLng(-150, -240), L.latLng(250, 340)),
     closePopupOnClick: false,
     layers: [tileRef.current], // Start with just the base layer
   };
@@ -89,7 +89,7 @@ const DeptMap= (props) => {
       
      <div className='d-flex dept-main'>
       <div className='dept-left text-center'>
-            <Link to="/CSE" className='left-nav-links'>
+            <Link to="/CSE" className='left-nav-links left-active-link'>
             CSE
             </Link>
             <Link to="/MCA" className='left-nav-links'>
