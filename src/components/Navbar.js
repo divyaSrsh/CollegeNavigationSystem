@@ -2,21 +2,24 @@ import React,{useState} from 'react'
 import {Navbar,Container,Nav,NavDropdown} from "react-bootstrap";
 import "../styles/Navbar.css";
 
-const  Navigationbar=() => {
+const  Navigationbar=({nav,setNav}) => {
   const  [showDeptNav, setShowDeptNav] = useState(false)
 
 
   return (
         <Navbar  className='navbar' collapseOnSelect expand="lg" >
           <Container>
-            <Navbar.Brand className='leftSide' href="/">CETgo</Navbar.Brand>
+            <Navbar.Brand className='leftSide' href="/" >CETgo</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className='rightSide'>
-                <Nav.Link href="/dept">Department</Nav.Link>
+                <Nav.Link href="/dept" onClick={() => {
+                  setNav(true)}}>Department</Nav.Link>
                 <Nav.Link href="#deets">Events</Nav.Link>
-                <div className='nav-sec'onClick={() => {setShowDeptNav(!showDeptNav)}}>Navigation</div>
+                <div className='nav-sec'onClick={() => {
+                  setShowDeptNav(!showDeptNav)
+                  setNav(false)}}>Navigation</div>
                 <Nav.Link href="/Login">Login</Nav.Link>
                 <NavDropdown title="More" id="collasible-nav-dropdown">
                   <NavDropdown.Item classname='drop-down'  href="#action/3.1">Emergency Contact</NavDropdown.Item>

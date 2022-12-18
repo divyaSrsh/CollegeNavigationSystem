@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ce0 from "../assets/images/CE0.png";
 import ce1 from "../assets/images/CE1.png";
-import ce2 from "../assets/images/CE0.png";
+import ce2 from "../assets/images/CE2.png";
 import "../styles/Civil.css";
 import { Slider } from "@mui/material";
 
@@ -60,7 +60,6 @@ function Civil() {
             marks={marks}
             onChange={handleImageChange}
           />
-          <h4>Route</h4>
         </div>
       </div>
     </div>

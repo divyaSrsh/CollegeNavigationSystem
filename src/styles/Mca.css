@@ -17,8 +17,9 @@ img{
 }
 
 .mca-right{
-    padding-top: 160px;
-    padding-left: 160px;
+    padding-top: 60px;
+    padding-left: 10px;
+    padding-bottom: 60px;
     color: #05386B;
 }
 
@@ -37,8 +38,18 @@ img{
     font-weight: 500;
     color: #EDF5E1!important;
     text-decoration: none;
+} 
+
+.left-active-link {
+    background-color:#0f3f36;
 }
 
-.left-nav-links.left-active-link {
-    background-color: #1c6153;
+.mca-right .css-xxsb21-MuiSlider-markLabel, .mca-right .MuiSlider-markLabelActive {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(3, 133, 3);
+}
+
+.mca-right .css-fk6q5t-MuiSlider-root {
+    color: black;
 }

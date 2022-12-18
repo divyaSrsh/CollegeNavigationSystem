@@ -17,8 +17,9 @@ img{
 }
 
 .civil-right{
-    padding-top: 160px;
-    padding-left: 160px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 100px;
     color: #05386B;
 }
 
@@ -40,7 +41,7 @@ img{
 } 
 
 .civil-right .css-xxsb21-MuiSlider-markLabel, .civil-right .MuiSlider-markLabelActive {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 600;
     color: green;
 }

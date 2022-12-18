@@ -1,6 +1,6 @@
-.login-body {
+ .login-body {
   position: fixed;
-  background: black;
+  background: #449dd1;
   top: 23px;
   right: 0;
   left: 0;
@@ -9,7 +9,7 @@
 }
 
 .login-main {
-  background: black;
+  background: #449dd1;
   height: 640px;
   margin: 0;
   padding: 0;
@@ -20,12 +20,13 @@
   margin-bottom: 2rem;
   display: block;
   margin-left: 7rem;
+  filter: opacity(1) drop-shadow(0 0 0 #0e5334);
 }
 
 .btn-primary {
   color: black;
-  background-color: #43a15d !important;
-  border-color: #43a15d !important;
+  background-color: #0e5334 !important;
+  border-style: none;
 }
 
 .reset {
@@ -39,4 +40,10 @@
 
 .text-left a {
   text-decoration: none;
+} 
+
+.reset{
+  color: rgb(7, 7, 7);
+  font-size: small ;
+  font-weight: 500;
 }

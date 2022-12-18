@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Home from "./pages/Home";
 import Login  from  "./pages/Login";
@@ -12,18 +12,19 @@ import Eee from "./pages/Eee";
 
 
 function App() {
+  const[nav,setNav]=useState(true)
   return (
     <div className="App">
       
       <Router>
-        <Navigationbar/>
+        <Navigationbar nav={nav} setNav={setNav}/>
        < Routes >
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home nav={nav} />} />
           <Route path="/MCA" element={<Mca/>} />
           <Route path="/CSE" element={<Cse/>} />
           <Route path="/CIVIL" element={<Civil/>} />
           <Route path="/login" element={<Login/>} />
-          <Route path="/dept" element={<DeptMap/>} />
+          <Route path="/dept" element={<DeptMap nav={nav} />} />
           <Route path="/EEE" element={<Eee/>} />
         </ Routes  > 
           

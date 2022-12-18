@@ -4,11 +4,11 @@ import CetMap from "../components/CetMap";
 
 import {Nav,Button,Form} from "react-bootstrap";
 
-function Home() {
+function Home({nav}) {
   return (
     <div >
       <div className="map"> 
-      <CetMap />
+      <CetMap nav={nav} />
         </div>
      
       

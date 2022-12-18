@@ -13,6 +13,7 @@ const DeptMap= (props) => {
   const [mapInstance, setMapInstance] = useState(null);
   const [marker, setMarker] = useState(null);
   const [value,setValue]=useState(null)
+  
 
   // Map refs:
   const mapRef = useRef(null);
@@ -103,16 +104,19 @@ const DeptMap= (props) => {
             </Link>
       </div>
      <div className='p-0 dept-right' >
-         <Form className="d-flex" >
-         <Form.Control
-           type="search"
-           placeholder="Search"
-           className="me-2"
-           aria-label="Search"
-           onChange={onChange}
-         />
-         <Button variant="outline-success" onClick={handleClick}>Search</Button>
-       </Form>
+      {props.nav?
+      <Form className="d-flex" >
+      <Form.Control
+        type="search"
+        placeholder="Search"
+        className="me-2"
+        aria-label="Search"
+        onChange={onChange}
+      />
+      <Button variant="outline-success" onClick={handleClick}>Search</Button>
+    </Form>:null
+      }
+         
        <div id="map" ></div>
      </div>  
     </div>

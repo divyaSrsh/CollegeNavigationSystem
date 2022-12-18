@@ -1,9 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import mca0 from "../assets/images/MCA0.png"
+import mca1 from "../assets/images/MCA1.png"
+import mca2 from "../assets/images/MCA2.png"
 import  {Link} from "react-router-dom"
 import "../styles/Mca.css"
+import { Slider } from "@mui/material";
 
 function Mca(){
+    const [floorImg, setFloorImage] = useState(0);
+
+  const floorData = [mca0, mca1, mca2];
+
+  const marks = [
+    {
+      value: 0,
+      label: "Ground Floor",
+    },
+    {
+      value: 50,
+      label: "First Floor",
+    },
+    {
+      value: 100,
+      label: "Second Floor",
+    },
+  ];
+
+  const handleImageChange = (e, val) => {
+    if (val / 50 !== floorImg) setFloorImage(val / 50);
+  };
+
     return(
       <div>
         <div className="mca-main">
@@ -22,10 +48,18 @@ function Mca(){
                 </Link>
             </div>
             <div className="mca-mid">
-                <img src={mca0}/>
+                <img src={floorData[floorImg]}/>
             </div>
             <div className="mca-right">
-                <h4>Route</h4>
+              <Slider
+              aria-label="Custom marks"
+              defaultValue={0}
+              step={50}
+              orientation="vertical"
+              valueLabelDisplay="off"
+              marks={marks}
+              onChange={handleImageChange}
+              />
             </div>
 
         </div>

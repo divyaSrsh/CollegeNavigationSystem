@@ -5,7 +5,7 @@ import data  from "../assets/cet_main.json"
 import {Nav,Button,Form} from "react-bootstrap";
 import  "../styles/CetMap.css";
 
-const CetMap= () => {
+const CetMap= (props) => {
   // Map state:
   const [mapInstance, setMapInstance] = useState(null);
   const [marker, setMarker] = useState(null);
@@ -86,16 +86,17 @@ const CetMap= () => {
     <div className=" map-container">
       <div  className='search-btn '>
         <Nav className="me-auto">
+          {props.nav?
           <Form className="d-flex" >
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-              onChange={onChange}
-            />
-            <Button className='search-side-btn'  variant="outline-success" onClick={handleClick}>Search</Button>
-          </Form>
+          <Form.Control
+            type="search"
+            placeholder="Search"
+            className="me-2"
+            aria-label="Search"
+            onChange={onChange}
+          />
+          <Button className='search-side-btn'  variant="outline-success" onClick={handleClick}>Search</Button>
+        </Form>:null}
            
         </Nav>
      </div>
