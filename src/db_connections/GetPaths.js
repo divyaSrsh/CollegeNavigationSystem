@@ -74,7 +74,6 @@ async function get_paths(x = 'CS_109', y='CS_302'){
    
 	// Don't forget to close the driver connection when you're finished with it
 	await driver.close()
-	// return(result)
 	return(result)
 
 };
@@ -84,6 +83,8 @@ async function get_paths(x = 'CS_109', y='CS_302'){
 //    });
 
 // export default get_paths;
+
+// for testing
 (async() => {
 	console.log(await get_paths('CS_302', 'CS_117'));
 })();
