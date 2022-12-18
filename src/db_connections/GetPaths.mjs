@@ -1,6 +1,6 @@
 require('dotenv').config({ path: '../../cred.env' })
 
-async function get_paths(x = 'CS_109', y='CS_302'){
+export async function getPaths(x = 'CS_109', y='CS_302'){
 	const neo4j = require('neo4j-driver')
 	
 	const user = process.env.NEO4J_USERNAME;
@@ -85,6 +85,6 @@ async function get_paths(x = 'CS_109', y='CS_302'){
 // export default get_paths;
 
 // for testing
-(async() => {
-	console.log(await get_paths('CS_302', 'CS_117'));
-})();
+// (async() => {
+// 	console.log(await getPaths('CS_302', 'CS_117'));
+// })();
