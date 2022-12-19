@@ -2,7 +2,7 @@ require('dotenv').config({ path: '../../cred.env' })
 // console.log(__dirname);
 const { pool } = require("./pg_db");
 
-async function getAllPoints() {
+export async function getAllPoints() {
   try {
     const res = await pool.query("SELECT * FROM cse_map");
     console.log(res.rows);
@@ -13,7 +13,7 @@ async function getAllPoints() {
 
 // retrieveData()
 
-async function getPointData(x) {
+export async function getPointData(x) {
 	try{
 		const res = await pool.query(`SELECT * FROM cse_map WHERE id='${x}'`);
 		return res;
@@ -54,6 +54,8 @@ async function getPointData(x) {
 // // 	console.log(await result)
 // // 	return result; 
 // //    });
+
+module.exports = {getAllPoints, getPointData};
 
 // // export default get_paths;
 (async() => {
