@@ -1,7 +1,11 @@
-require('dotenv').config({ path: '../../cred.env' })
+// require('dotenv').config({ path: '../../cred.env' })
+import dotenv from "dotenv";
+import neo4j from 'neo4j-driver';
+dotenv.config({path: '../../cred.env'});
+
 
 export async function getPaths(x = 'CS_109', y='CS_302'){
-	const neo4j = require('neo4j-driver')
+	// const neo4j = require('neo4j-driver')
 	
 	const user = process.env.NEO4J_USERNAME;
 
@@ -46,10 +50,10 @@ export async function getPaths(x = 'CS_109', y='CS_302'){
 			tx.run(readQuery)
 		)
 		// console.log(readResult)
-		record_set = []
+		let record_set = [];
 		readResult.records.map(record => {
 			// console.log(record)
-			list = []
+			let list = [];
 			var segments = record["_fields"][0]["segments"];
 			segments.forEach(element => {
 				// console.log(element)
@@ -82,9 +86,10 @@ export async function getPaths(x = 'CS_109', y='CS_302'){
 // 	return result; 
 //    });
 
+// module.exports({getPaths});
 // export default get_paths;
 
 // for testing
-// (async() => {
-// 	console.log(await getPaths('CS_302', 'CS_117'));
-// })();
+(async() => {
+	console.log(await getPaths('CS_302', 'CS_117'));
+})();
