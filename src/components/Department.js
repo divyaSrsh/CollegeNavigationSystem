@@ -99,7 +99,7 @@ const DeptMap= (props) => {
             <Link to="/CIVIL" className='left-nav-links'>
             CIVIL
             </Link>
-            <Link to="/" className='left-nav-links'>
+            <Link to="/EEE" className='left-nav-links'>
             EEE
             </Link>
       </div>

@@ -1,0 +1,73 @@
+.about-main {
+    height: calc(100vh -  71px);
+    background-color: #87CEEB;
+    padding: 30px 50px;
+    font-family: 'Ibarra Real Nova', serif;
+}
+
+.about-box-main{
+    height: calc(100vh -  130px);
+    border: 2px solid #6d1ca3;
+    padding: 10px;
+    background-color: #7209B7;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo-img{
+    width: 87px;
+    height: 70px;
+    border-radius: 30px;
+}
+
+
+.edit-img{
+    margin-top : 15px;
+    padding: 6px; 
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.about-left{
+    padding: 10px 0px ;
+    border-right: 1.7px solid black;
+    height: calc(100vh -  130px);
+}
+
+.left-buttons{
+    display: flex;
+    flex-direction: column;
+    padding: 7px 36px 30px 0px;
+}
+
+.left-buttons button{
+    background-color: #132584;
+    border: 1px solid #05386B;
+    border-radius: 6px;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.left-name{
+    padding: 10px 36px 30px 0px;
+}
+
+.about-right{
+    width: 500px;
+    color :white;
+}
+

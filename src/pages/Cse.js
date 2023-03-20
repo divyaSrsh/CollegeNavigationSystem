@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import cse0 from "../assets/images/CSE0.png";
 import cse1 from "../assets/images/CSE1.png";
@@ -7,9 +7,24 @@ import "../styles/Cse.css";
 import { Slider } from "@mui/material";
 
 function Cse() {
+  const canvasRef = useRef(null);
+  const floorData = [cse0, cse1, cse2];
+  const [currentImage, setCurrentImage] = useState(cse0);
   const [floorImg, setFloorImage] = useState(0);
 
-  const floorData = [cse0, cse1, cse2];
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const context = canvas.getContext("2d");
+
+    const img = new Image();
+    img.src = currentImage;
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    img.onload = () => {
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      context.drawImage(img, 0, 0, canvas.width, canvas.height);
+    };
+  }, [currentImage]);
 
   const marks = [
     {
@@ -27,7 +42,10 @@ function Cse() {
   ];
 
   const handleImageChange = (e, val) => {
-    if (val / 50 !== floorImg) setFloorImage(val / 50);
+    if (val / 50 !== floorImg) {
+      setFloorImage(val / 50);
+      setCurrentImage(floorData[val / 50]);
+    }
   };
 
   return (
@@ -43,23 +61,25 @@ function Cse() {
           <Link to="/CIVIL" className="left-nav-links ">
             CIVIL
           </Link>
-          <Link to="/" className="left-nav-links">
+          <Link to="/EEE" className="left-nav-links">
             EEE
           </Link>
         </div>
-        <div className="cse-mid">
-          <img src={floorData[floorImg]} />
-        </div>
-        <div className="cse-right">
-          <Slider
-            aria-label="Custom marks"
-            defaultValue={0}
-            step={50}
-            orientation="vertical"
-            valueLabelDisplay="off"
-            marks={marks}
-            onChange={handleImageChange}
-          />
+        <div className="d-flex justify-content-around w-100">
+          <div className="cse-mid">
+            <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
+          </div>
+          <div className="cse-right">
+            <Slider
+              aria-label="Custom marks"
+              defaultValue={0}
+              step={50}
+              orientation="vertical"
+              valueLabelDisplay="off"
+              marks={marks}
+              onChange={handleImageChange}
+            />
+          </div>
         </div>
       </div>
     </div>

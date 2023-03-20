@@ -16,7 +16,7 @@ const  Navigationbar=({nav,setNav}) => {
               <Nav className='rightSide'>
                 <Nav.Link href="/dept" onClick={() => {
                   setNav(true)}}>Department</Nav.Link>
-                <Nav.Link href="#deets">Events</Nav.Link>
+                <Nav.Link href="/profile">Events</Nav.Link>
                 <div className='nav-sec'onClick={() => {
                   setShowDeptNav(!showDeptNav)
                   setNav(false)}}>Navigation</div>

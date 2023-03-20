@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ce0 from "../assets/images/CE0.png";
 import ce1 from "../assets/images/CE1.png";
@@ -7,9 +7,25 @@ import "../styles/Civil.css";
 import { Slider } from "@mui/material";
 
 function Civil() {
+  const canvasRef = useRef(null);
+  const floorData = [ce0, ce1, ce2];
+  const [currentImage, setCurrentImage] = useState(ce0);
   const [floorImg, setFloorImage] = useState(0);
 
-  const floorData = [ce0, ce1, ce2];
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const context = canvas.getContext("2d");
+
+    const img = new Image();
+    img.src = currentImage;
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    img.onload = () => {
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      context.drawImage(img, 0, 0, canvas.width, canvas.height);
+    };
+  }, [currentImage]);
+ 
 
   const marks = [
     {
@@ -27,7 +43,10 @@ function Civil() {
   ];
 
   const handleImageChange = (e, val) => {
-    if (val / 50 !== floorImg) setFloorImage(val / 50);
+    if (val / 50 !== floorImg) {
+      setFloorImage(val / 50);
+      setCurrentImage(floorData[val / 50]);
+    }
   };
 
   return (
@@ -43,23 +62,25 @@ function Civil() {
           <Link to="/CIVIL" className="left-nav-links left-active-link">
             CIVIL
           </Link>
-          <Link to="/" className="left-nav-links">
+          <Link to="/EEE" className="left-nav-links">
             EEE
           </Link>
         </div>
-        <div className="civil-mid">
-          <img src={floorData[floorImg]} />
-        </div>
-        <div className="civil-right">
-          <Slider
-            aria-label="Custom marks"
-            defaultValue={0}
-            step={50}
-            orientation="vertical"
-            valueLabelDisplay="off"
-            marks={marks}
-            onChange={handleImageChange}
-          />
+        <div className="d-flex justify-content-around w-100">
+          <div className="civil-mid">
+            <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
+          </div>
+          <div className="civil-right">
+            <Slider
+              aria-label="Custom marks"
+              defaultValue={0}
+              step={50}
+              orientation="vertical"
+              valueLabelDisplay="off"
+              marks={marks}
+              onChange={handleImageChange}
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -1,9 +1,9 @@
-.cse-main{
+.eee-main{
     display: flex;
     flex-direction: row;
 }
 
-.cse-left{
+.eee-left{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -12,13 +12,13 @@
 }
 
 img{
-    padding: 6px 10px;
+    padding: 6px 8px;
     height: calc(100vh - 71px);
 }
 
-.cse-right{
-    padding-top: 70px;
-    padding-bottom: 70px;
+.eee-right{
+    padding-top: 30px;
+    padding-bottom: 60px;
     padding-left: 100px;
     color: #05386B;
 }
@@ -40,13 +40,12 @@ img{
     text-decoration: none;
 } 
 
-.cse-right .css-xxsb21-MuiSlider-markLabel, .cse-right .MuiSlider-markLabelActive {
+.eee-right .css-xxsb21-MuiSlider-markLabel, .eee-right .MuiSlider-markLabelActive {
     font-size: 15px;
     font-weight: 600;
     color: green;
-    padding-left: 3px;
 }
 
-.cse-right .css-fk6q5t-MuiSlider-root {
+.eee-right .css-fk6q5t-MuiSlider-root {
     color: black;
 }
