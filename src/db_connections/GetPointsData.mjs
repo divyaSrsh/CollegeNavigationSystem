@@ -1,6 +1,9 @@
-require('dotenv').config({ path: '../../cred.env' })
+// require('dotenv').config({ path: '../../cred.env' })
+import dotenv from "dotenv";
+dotenv.config({path: '../../cred.env'});
 // console.log(__dirname);
-const { pool } = require("./pg_db");
+// const { pool } = require("./pg_db");
+import { pool }  from "./pg_db.js";
 
 export async function getAllPoints() {
   try {
@@ -58,14 +61,14 @@ export async function getPointData(x) {
 module.exports = {getAllPoints, getPointData};
 
 // // export default get_paths;
-(async() => {
-	let res = await getPointData('CS_302');
-	let res2 = JSON.parse(JSON.stringify(await res));
-	let res4 = {};
-	// let res3 = await res2.command;
-	res4.command = await res2.command;
-	res4.rowCount = await res2.rowCount;
-	res4.oid = await res2.oid;
-	res4.rows = await res2.rows;
-	console.log(await res4);
-})();
+// (async() => {
+// 	let res = await getPointData('CS_302');
+// 	let res2 = JSON.parse(JSON.stringify(await res));
+// 	let res4 = {};
+// 	// let res3 = await res2.command;
+// 	res4.command = await res2.command;
+// 	res4.rowCount = await res2.rowCount;
+// 	res4.oid = await res2.oid;
+// 	res4.rows = await res2.rows;
+// 	console.log(await res4);
+// })();

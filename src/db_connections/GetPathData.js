@@ -1,10 +1,12 @@
 // const { getAllPoints, getPointData } = require('./GetPointsData');
 
+// const { getPaths } = require("./GetPaths.mjs");
+// const { getAllPoints, getPointData } = require("./GetPointsData.mjs");
+
 // require('dotenv').config({ path: '../../cred.env' })
 import { getAllPoints, getPointData } from './GetPointsData.mjs';
 import { getPaths } from './GetPaths.mjs';
-// { getAllPoints, getPointData } = require("./GetPointsData");
-
+// { getPaths } = 
 // let res = await getPointData('CS_302');
 // let res2 = JSON.parse(JSON.stringify(await res));
 // let res4 = {};
