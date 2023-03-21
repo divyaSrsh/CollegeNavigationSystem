@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const getUsers = async () => {
+const getFloors= async () => {
   try {
-    return await axios.get("https://api.publicapis.org/entries");
+    return await axios.get("http://127.0.0.1:5000/floors/cse1");
   } catch (err) {
     console.log("User API call not complete");
   }
 };
-export {getUsers};
+export {getFloors};

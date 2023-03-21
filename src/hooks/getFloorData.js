@@ -1,5 +1,5 @@
 import { useEffect,useState } from "react";
-import {getUsers} from '../api/index'
+import {getFloors} from '../api/index'
 
 export const useFloorData = () => {
     const [data, setData] = useState([])
