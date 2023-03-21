@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import cse0 from "../assets/images/CSE0.png";
 import cse1 from "../assets/images/CSE1.png";
 import cse2 from "../assets/images/CSE2.png";
+import {Nav,Button,Form} from "react-bootstrap";
 import "../styles/Cse.css";
 import { Slider } from "@mui/material";
 
@@ -11,6 +12,7 @@ function Cse() {
   const floorData = [cse0, cse1, cse2];
   const [currentImage, setCurrentImage] = useState(cse0);
   const [floorImg, setFloorImage] = useState(0);
+  const [locationImg,setLocationImg]=useState(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -23,6 +25,14 @@ function Cse() {
       canvas.width = img.naturalWidth;
       canvas.height = img.naturalHeight;
       context.drawImage(img, 0, 0, canvas.width, canvas.height);
+      context.lineWidth = 20; 
+      context.strokeStyle = "red";
+      context.beginPath()
+      context.moveTo(950,700)
+      context.lineTo(2125,700)
+      context.lineTo(2125,900)
+      context.stroke()
+      context.closePath()
     };
   }, [currentImage]);
 
@@ -47,10 +57,35 @@ function Cse() {
       setCurrentImage(floorData[val / 50]);
     }
   };
+  const handleClick = (event) => {
+    event.preventDefault(); // Prevent default submission
+    if (locationImg) {
+      context.drawImage(img, 0, 0, canvas.width, canvas.height);
+    }
+  };
+
+  const onChange = (event) => {
+    setValue(event.target.value);
+  };
 
   return (
     <div>
       <div className="cse-main">
+      {/* <div  className='search-btn '>
+        <Nav className="me-auto">
+          <Form className="d-flex" >
+          <Form.Control
+            type="search"
+            placeholder="Search"
+            className="me-2"
+            aria-label="Search"
+            onChange={onChange}
+          />
+          <Button className='search-side-btn'  variant="outline-success" onClick={handleClick} >Search</Button>
+        </Form>
+           
+        </Nav>
+      </div> */}
         <div className="cse-left text-center">
           <Link to="/CSE" className="left-nav-links left-active-link">
             CSE

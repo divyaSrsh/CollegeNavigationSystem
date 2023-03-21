@@ -12,7 +12,11 @@ import Civil from "./pages/Civil";
 import Eee from "./pages/Eee";
 import Profile from "./pages/Profile";
 import About from "./pages/About";
-
+import AddEvent from "./pages/addevent";
+import ShowEvent from "./pages/ShowEvent";
+import Location from "./pages/Location";
+import Org from "./pages/Org";
+// import Navigation from "./pages/Navigation";
 
 function App() {
   const[nav,setNav]=useState(true)
@@ -25,6 +29,7 @@ function App() {
           <Route path="/" element={<Home nav={nav} />} />
           <Route path="/MCA" element={<Mca/>} />
           <Route path="/CSE" element={<Cse/>} />
+          {/* <Route path="/Navi" element={<Navigation />} /> */}
           <Route path="/CIVIL" element={<Civil/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/event" element={<Event/>} />
@@ -32,6 +37,10 @@ function App() {
           <Route path="/EEE" element={<Eee/>} />
           <Route path="/profile" element={<Profile/>} />
           <Route path="/About" element={<About/>} />
+          <Route path="/AddEvent" element={<AddEvent/>} />
+          <Route path="/ShowEvent" element={<ShowEvent/>} />
+          <Route path="/Org" element={<Org/>} />
+          <Route path="/Location" element={<Location/>} />
         </ Routes  > 
           
 

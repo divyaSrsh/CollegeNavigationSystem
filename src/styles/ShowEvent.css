@@ -1,11 +1,11 @@
-.about-main {
+.se-main {
     height: calc(100vh -  71px);
     background-color: #87CEEB;
     padding: 30px 50px;
     font-family: 'Ibarra Real Nova', serif;
 }
 
-.about-box-main{
+.se-box-main{
     height: calc(100vh -  130px);
     border: 2px solid #6d1ca3;
     padding: 10px;
@@ -39,10 +39,11 @@
     border-radius: 20px;
 }
 
-.about-left{
+.se-left{
     padding: 10px 0px ;
     border-right: 1.7px solid black;
     height: calc(100vh -  130px);
+    width: 350px;
 }
 
 .left-buttons{
@@ -65,49 +66,76 @@
 .left-name{
     padding: 10px 36px 30px 0px;
 }
+.Card{
+    background-color: #87CEEB;
+}
 
-.about-right{
-    width: 900px;
-    color :white;
-    font-size: 18px;
+.event-heading{
+    color: white;
+    padding-right: 30px;
+}
+
+.se-right{
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* width: 200px; */
+    width: 100%;
+    height: 100%;
+    padding-left: 25px;
+}
+.se-right-card{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    overflow-x: auto;
+    width: 80%;
+    height: 100%;
+    padding-right: 10px;
     
 }
-
-.about-right-up{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.card-img{
+    width: 100px;
+    height: 100px;
 }
 
-.about-contact{
+
+
+.card-image-container{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-left: 30px ;
+    justify-content: space-evenly;
 }
-.about-contact-icon{
-    display: flex;
-    flex-direction: row;
-    padding: 3px;
+
+.card-title{
+    border-bottom: 1px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-color: black;
+    border-style: solid;
+    font-size: 30px;
+    /* padding-left: 10px; */
+    text-align: center;
 }
-.follow{
-    margin-left: 219px;
-    padding-top: 60px;
+
+.card-venue-container{
+    /* padding-left: 10px; */
+    text-align: center;
+
 }
-.about-links{
-    display: flex;
-    flex-direction: row;
+
+.card-venue{
+    font-size: 20px;
+}
+
+.card-date-container{
+    /* padding-left: 10px; */
+    text-align: center;
+    line-height: 20px;
+}
+
+.details-container{
+    font-size: 15px;
+    padding-right: 10px;
+    text-align: end;
     text-decoration: none;
-    align-items: center;
-    margin-left: 100px;
 }
-
-.about-links a{
-    padding: 10px 20px;
-    text-decoration: none;
-    color: black;
-}
-
+a:link { text-decoration: none; }

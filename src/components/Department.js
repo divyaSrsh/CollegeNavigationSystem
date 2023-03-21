@@ -6,7 +6,6 @@ import {Nav,Button,Form,Col,Row} from "react-bootstrap";
 import "../styles/Department.css"
 import  {Link} from "react-router-dom"
   
-  
 
 const DeptMap= (props) => {
   // Map state:

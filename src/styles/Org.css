@@ -1,11 +1,11 @@
-.profile-main {
+.org-main {
     height: calc(100vh -  71px);
     background-color: #87CEEB;
     padding: 30px 50px;
     font-family: 'Ibarra Real Nova', serif;
 }
 
-.profile-box-main{
+.org-box-main{
     height: calc(100vh -  130px);
     border: 2px solid #6d1ca3;
     padding: 10px;
@@ -39,7 +39,7 @@
     border-radius: 20px;
 }
 
-.profile-left{
+.org-left{
     padding: 10px 0px ;
     border-right: 1.7px solid black;
     height: calc(100vh -  130px);
@@ -65,9 +65,21 @@
 .left-name{
     padding: 10px 36px 30px 0px;
 }
-.bg-img{
-    width: 800px;
-    height: calc(100vh -  130px);
+.org-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 0px;
 }
+.org-right-text{
+    width: 500px;
+    color: whitesmoke;
+    margin-top: 40px;
+    padding: 20px;
+}
+.group-img{
+    width: 400px;
+    height : calc(100vh -  160px);
+};
 
 
