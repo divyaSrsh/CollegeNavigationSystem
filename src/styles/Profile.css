@@ -1,6 +1,9 @@
 .profile-main {
-    height: calc(100vh -  71px);
+    /* height: calc(100vh -  71px); */
+    height: auto;
     background-color: #87CEEB;
+    width: 100vw;
+    max-height: 100%;
     padding: 30px 50px;
     font-family: 'Ibarra Real Nova', serif;
 }
@@ -8,6 +11,8 @@
 .profile-box-main{
     height: calc(100vh -  130px);
     border: 2px solid #6d1ca3;
+    min-width: 200px;
+    min-height: min-content;
     padding: 10px;
     background-color: #7209B7;
     border-radius: 5px;
@@ -40,25 +45,44 @@
 }
 
 .profile-left{
+    flex-basis: inherit;
+    flex-shrink: 0;
+    min-width: min-content;
     padding: 10px 0px ;
     border-right: 1.7px solid black;
-    height: calc(100vh -  130px);
+    border-bottom: none;
+    /* height: calc(100vh -  130px); */
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.profile-right{
+    flex-basis: 70%;
+    padding: 10px;
+    /* width: 100%; */
+    height: inherit;
+    width: auto;
+    /* max-width: min-content - 60vh; */
+    overflow: scroll;
 }
 
 .left-buttons{
     display: flex;
     flex-direction: column;
     padding: 7px 36px 30px 0px;
+    /* overflow-y: scroll; */
 }
 
 .left-buttons button{
     background-color: #132584;
     border: 1px solid #05386B;
     border-radius: 6px;
+    min-width: max(min-content, 300px);
     color: white;
     padding: 10px 25px;
     text-align: center;
     text-decoration: none;
+    text-overflow: clip;
     font-size: 16px;
     margin-bottom: 15px;
 }
@@ -66,8 +90,42 @@
     padding: 10px 36px 30px 0px;
 }
 .bg-img{
-    width: 800px;
-    height: calc(100vh -  130px);
+    display: inline-block;
+    object-fit: contain;
+    height: 100%;
+    /* width: 100%; */
+    /* height: clamp(200px, auto, 60vh); */
+    /* height: 100%; */
+    /* height: calc(90vh -  130px); */
+    /* width: auto; */
+    /* align-content: center; */
 }
 
+@media screen and (max-aspect-ratio: 1/1) {
 
+    .profile-box-main{
+        flex-direction: column;
+        height: 100vh;
+    }
+    
+    .profile-left, .profile-right {
+        flex-basis: auto;
+    }
+
+    .left-buttons{
+        flex-direction: row;
+    }
+
+    .profile-left {
+        min-height: 20%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border-right: none;
+        border-bottom: 1.7px solid black;
+    }
+
+    .bg-img{
+        width: 100%;
+        height: auto;
+    }
+}
