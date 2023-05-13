@@ -6,7 +6,6 @@ import {Nav,Button,Form} from "react-bootstrap";
 import  "../styles/CetMap.css";
 import { useFloorData } from '../hooks/getFloorData';
 import { CottageSharp } from '@mui/icons-material';
-// import { UserLocation } from "./UserLocation";
 
 const CetMap= (props) => { 
   // Map state:
@@ -19,7 +18,7 @@ const CetMap= (props) => {
   const markerRef = useRef(null);
  
 
-  const data=useFloorData();
+  console.log(useFloorData())  
 
 
   // Base tile for the map:

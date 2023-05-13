@@ -19,11 +19,11 @@ const  Navigationbar=({nav,setNav}) => {
                 <Nav.Link href="/profile">Events</Nav.Link>
                 <Nav.Link href="/Navi">Navigation</Nav.Link>
                 <Nav.Link href="/Login">Login</Nav.Link>
-                <NavDropdown title="More" id="collasible-nav-dropdown">
+                {/* <NavDropdown title="More" id="collasible-nav-dropdown">
                   <NavDropdown.Item classname='drop-down'  href="#action/3.1">Emergency Contact</NavDropdown.Item>
                   <NavDropdown.Item classname='drop-down' href="#action/3.2">Exam Hall Search</NavDropdown.Item>
                   <NavDropdown.Item classname='drop-down' href="#action/3.3">About Us</NavDropdown.Item>
-                </NavDropdown>
+                </NavDropdown> */}
               </Nav>
             </Navbar.Collapse>
             <div className='dept-nav' hidden={!showDeptNav}>

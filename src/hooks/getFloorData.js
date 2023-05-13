@@ -5,7 +5,7 @@ export const useFloorData = () => {
     const [data, setData] = useState([])
     
     useEffect(() => {
-        getUsers().then(res => {
+        getFloors().then(res => {
             setData(res.data)
             console.log(res.data);
         }).catch(err => console.log(err))
