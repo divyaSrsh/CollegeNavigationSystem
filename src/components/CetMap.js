@@ -5,22 +5,21 @@ import data  from "../assets/cet_main.json"
 import {Nav,Button,Form} from "react-bootstrap";
 import  "../styles/CetMap.css";
 import { useFloorData } from '../hooks/getFloorData';
+
 import { CottageSharp } from '@mui/icons-material';
 
-const CetMap= (props) => { 
+const CetMap= (props) => {
   // Map state:
   const [mapInstance, setMapInstance] = useState(null);
   const [marker, setMarker] = useState(null);
   const [value,setValue]=useState(null)
+
   // Map refs:
   const mapRef = useRef(null);
   const tileRef = useRef(null);
   const markerRef = useRef(null);
- 
 
-  console.log(useFloorData())  
-
-
+  console.log(useFloorData());
   // Base tile for the map:
   tileRef.current = L.tileLayer(
     `https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`,
@@ -38,13 +37,14 @@ const CetMap= (props) => {
     zoomSnap: 0.75,
     layers: [tileRef.current], // Start with just the base layer
   };
+
   // Map creation:
   useEffect(() => {
     mapRef.current = L.map('map', mapParams);
     // Set map instance to state:
     setMapInstance(mapRef.current);
-    
   }, []);
+
 
   const handleClick = (event) => {
     event.preventDefault(); // Prevent default submission
@@ -62,17 +62,8 @@ const CetMap= (props) => {
             y=building['y']
             f=1;
           }
-          else{
-            data.map((room,id)=>{
-              if(value.toLowerCase()=== room.id.toLowerCase()){
-                x=room.fx
-                y=room.fy
-                f=2;
-              }
-            })
-          }
         })
-        if(f===1||f===2){
+        if(f===1){
             // console.log("hello")
             console.log(x,y,value)
             var myIcon = L.icon({
