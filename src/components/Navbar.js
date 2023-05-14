@@ -19,7 +19,7 @@ const  Navigationbar=({nav,setNav}) => {
                   setNav(true)}}>Department</Nav.Link>
                 <Nav.Link href="/profile">Events</Nav.Link>
                 <div className='nav-sec'onClick={() => {setShowDeptNav(!showDeptNav)}}>Navigation</div>
-                <Nav.Link href="/Login">Login</Nav.Link>
+                <Nav.Link href="/login">Login</Nav.Link>
                 {/* <NavDropdown title="More" id="collasible-nav-dropdown">
                   <NavDropdown.Item classname='drop-down'  href="#action/3.1">Emergency Contact</NavDropdown.Item>
                   <NavDropdown.Item classname='drop-down' href="#action/3.2">Exam Hall Search</NavDropdown.Item>
