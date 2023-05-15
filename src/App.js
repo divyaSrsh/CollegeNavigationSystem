@@ -12,9 +12,9 @@ import Civil from "./pages/Civil";
 import Eee from "./pages/Eee";
 import Profile from "./pages/Profile";
 import About from "./pages/About";
-// import Addevent from "./pages/Addevent";
+import Addevent from "./pages/addevent";
 import ShowEvent from "./pages/ShowEvent";
-import Location from "./pages/Location";
+// import Location from "./pages/Location";
 import Org from "./pages/Org";
 // import Navigation from "./pages/Navigation";
 
@@ -37,7 +37,7 @@ function App() {
           <Route path="/EEE" element={<Eee/>} />
           <Route path="/profile" element={<Profile/>} />
           <Route path="/About" element={<About/>} />
-          {/* <Route path="/Addevent" element={<Addevent/>} /> */}
+          <Route path="/Addevent" element={<Addevent/>} />
           <Route path="/ShowEvent" element={<ShowEvent/>} />
           <Route path="/Org" element={<Org/>} />
           <Route path="/Location" element={<Location/>} />

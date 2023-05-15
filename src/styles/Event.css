@@ -1,0 +1,104 @@
+.e-main {
+    height: calc(100vh -  71px);
+    background-color: #87CEEB;
+    padding: 30px 50px;
+    font-family: 'Ibarra Real Nova', serif;
+}
+
+/* .e-right{
+    height: calc(100vh -  130px);
+    border: 2px solid #6d1ca3;
+    padding: 10px;
+    background-color: #7209B7;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+
+.Card{
+    background-color: #87CEEB;
+}
+
+.e-heading{
+    color: #7209B7;
+    padding-right: 30px;
+    text-align: center;
+}
+
+.e-right{
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* width: 200px; */
+    width: 100%;
+    height: 100%;
+    padding-left: 25px;
+}
+.e-right-card{
+    display: flex;
+    overflow-x: auto;
+    width: 80%;
+    height: 100%;
+    padding-right: 10px;
+    
+}
+.e-card-img{
+    width: 100px;
+    height: 100px;
+}
+
+.e-card-image-container{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    
+}
+.image{
+    transition: transform .2s; /* Animation */
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.image:hover {
+    transform: scale(1.3);
+}
+
+.e-card-title{
+    border-bottom: 1px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-color: black;
+    border-style: solid;
+    font-size: 30px;
+    /* padding-left: 10px; */
+    text-align: center;
+}
+
+.e-card-venue-container{
+    /* padding-left: 10px; */
+    text-align: center;
+
+}
+
+.e-card-venue{
+    font-size: 20px;
+}
+
+.e-card-date-container{
+    /* padding-left: 10px; */
+    text-align: center;
+    line-height: 20px;
+}
+
+.e-details-container{
+    font-size: 15px;
+    padding-right: 10px;
+    text-align: end;
+    text-decoration: none;
+}
+a:link { text-decoration: none; }
