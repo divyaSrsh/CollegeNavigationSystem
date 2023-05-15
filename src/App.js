@@ -14,7 +14,7 @@ import Profile from "./pages/Profile";
 import About from "./pages/About";
 import AddEvent from "./pages/addevent";
 import ShowEvent from "./pages/ShowEvent";
-import Location from "./pages/Location";
+// import Location from "./pages/Location";
 import Org from "./pages/Org";
 // import Navigation from "./pages/Navigation";
 

@@ -24,9 +24,9 @@ const ShowEvent = () => {
     const navigateAddEvent = () => {
         navigate('/AddEvent');
     };
-    const navigateLoc = () => {
-        navigate('/Location');
-    };
+    // const navigateLoc = () => {
+    //     navigate('/Location');
+    // };
     const navigateShowEvent = () => {
         navigate('/ShowEvent');
     };
@@ -43,7 +43,7 @@ const ShowEvent = () => {
                     </div>
                     <div className="left-buttons">
                         <button onClick={navigateOrg}> IEEE Organisation </button>
-                        <button onClick={navigateLoc}> LOCATION </button>
+                        {/* <button onClick={navigateLoc}> LOCATION </button> */}
                         <button onClick={navigateShowEvent}> EVENTS </button>
                         <button onClick={navigateAddEvent}> ADD EVENT </button>
                         <button onClick={navigateAbout}> ABOUT </button>
@@ -88,6 +88,58 @@ const ShowEvent = () => {
                             </a>
                           </div>
                         </div>
+
+                        <div style={{backgroundColor: 'white', width: '215px', height: "fit-content", marginRight: "15px"}}>
+                          <div className='card-image-container'><img src={event2} style={{width: "210px", height: "210px"}}/></div>
+                          <div className='card-title'>Hack-a-Week</div>
+                          <div className='card-venue-container'>
+                            <div className='card-venue'>EEE 203</div>
+                          </div>
+                          <div className='card-date-container'>
+                            <div className='card-date'>30-03-2023</div>
+                            <div className='card-date-label'>10am to 4pm</div>
+                          </div>
+                          <div className='details-container'>
+                            <a href="https://www.instagram.com/ieeesbcet/" target="_blank">
+                              More info..
+                            </a>
+                          </div>
+                        </div>
+
+                        <div style={{backgroundColor: 'white', width: '215px', height: "fit-content", marginRight: "15px"}}>
+                          <div className='card-image-container'><img src={event2} style={{width: "210px", height: "210px"}}/></div>
+                          <div className='card-title'>Hack-a-Week</div>
+                          <div className='card-venue-container'>
+                            <div className='card-venue'>EEE 203</div>
+                          </div>
+                          <div className='card-date-container'>
+                            <div className='card-date'>30-03-2023</div>
+                            <div className='card-date-label'>10am to 4pm</div>
+                          </div>
+                          <div className='details-container'>
+                            <a href="https://www.instagram.com/ieeesbcet/" target="_blank">
+                              More info..
+                            </a>
+                          </div>
+                        </div>
+                        
+                        <div style={{backgroundColor: 'white', width: '215px', height: "fit-content", marginRight: "15px"}}>
+                          <div className='card-image-container'><img src={event2} style={{width: "210px", height: "210px"}}/></div>
+                          <div className='card-title'>Hack-a-Week</div>
+                          <div className='card-venue-container'>
+                            <div className='card-venue'>EEE 203</div>
+                          </div>
+                          <div className='card-date-container'>
+                            <div className='card-date'>30-03-2023</div>
+                            <div className='card-date-label'>10am to 4pm</div>
+                          </div>
+                          <div className='details-container'>
+                            <a href="https://www.instagram.com/ieeesbcet/" target="_blank">
+                              More info..
+                            </a>
+                          </div>
+                        </div>
+
 
 
                     </div>

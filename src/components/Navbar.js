@@ -17,9 +17,10 @@ const  Navigationbar=({nav,setNav}) => {
               <Nav className='rightSide'>
                 <Nav.Link href="/dept" onClick={() => {
                   setNav(true)}}>Department</Nav.Link>
-                <Nav.Link href="/profile">Events</Nav.Link>
+                <Nav.Link href="/profile">Profile</Nav.Link>
                 <div className='nav-sec'onClick={() => {setShowDeptNav(!showDeptNav)}}>Navigation</div>
                 <Nav.Link href="/Login">Login</Nav.Link>
+                <Nav.Link href="/Event">Events</Nav.Link>
                 {/* <NavDropdown title="More" id="collasible-nav-dropdown">
                   <NavDropdown.Item classname='drop-down'  href="#action/3.1">Emergency Contact</NavDropdown.Item>
                   <NavDropdown.Item classname='drop-down' href="#action/3.2">Exam Hall Search</NavDropdown.Item>
