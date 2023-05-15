@@ -8,33 +8,48 @@ const EventForm = () => {
       location: '',
       date: '',
       time: '',
-      poster: null,
+      Poster: null,
       description: '',
+      Operation:'Create',
+      id:'2',
+      
       // Add other fields as needed
     });
     
     const navigate = useNavigate();
 
     const handleChange = (e) => {
+      // console.log(URL.createObjectURL(e.target.files[0]));
       setEvent({ ...event, [e.target.name]: e.target.value });
     };
   
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await axios.post('127.0.0.1:5000/events', event);
+        const reqData = {
+          title: event.title,
+          location: event.location,
+          datetime: event.date + " " + event.time,
+          Poster: event.Poster,
+          description: event.description,
+          Operation:'Create',
+          id:'2',
+        }
+        console.log(reqData);
+        const response = await axios.post('http://localhost:5000/events', reqData);
         // .then((res)=>{}); 
         // Replace "/api/events" with your backend endpoint
         console.log(response.data); // Optional: Do something with the response
         // Reset the form after successful submission
-        setEvent({
-          title: '',
-          location: '',
-          date: '',
-          time: '',
-          poster: '',
-          description: '',
-        });
+        // setEvent({
+        //   title: '',
+        //   location: '',
+        //   date: '',
+        //   time: '',
+        //   Poster: '',
+        //   description: '',
+          
+        // });
         navigate('/ShowEvent');
       } catch (error) {
         console.error(error);
