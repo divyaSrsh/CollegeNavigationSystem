@@ -4,9 +4,11 @@ import Alert from 'react-bootstrap/Alert';
 import { Col, Container, Row, Form, Button } from "react-bootstrap";
 import loginIcon from "../assets/loginIcon.png";
 import "../styles/Login.css";
+import { useNavigate } from 'react-router-dom';
 // import { useLoginCred } from '../hooks/getLoginCred';
 
 function Login() {
+  const navigate = useNavigate();
   const [username, setUsername] = useState(null);
   const [pswd,setPswd]=useState("");
   const [login,setLogin]=useState(0); // 0-not login start 1- login 2-invalid
@@ -35,9 +37,11 @@ function Login() {
         }).then(res =>{
           console.log(res.data.message)
             if(res.data.message[0]=='L')
-            setLogin(1);
+            {setLogin(1);
+              navigate('/profile');}
             else
             setLogin(2);
+            
         });
     } catch (err) {
       console.log(err);
