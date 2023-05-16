@@ -8,6 +8,7 @@ import {useNavigate} from "react-router-dom"
 // import { useLoginCred } from '../hooks/getLoginCred';
 
 function Login() {
+  const navigate = useNavigate();
   const [username, setUsername] = useState(null);
   const navigate = useNavigate()
   const [pswd, setPswd] = useState("");
