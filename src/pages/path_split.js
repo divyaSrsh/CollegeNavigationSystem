@@ -32,11 +32,14 @@ axios.post('http://127.0.0.1:5000/shortestpath', data)
 			temp.push([data[i].fx, data[i].fy])
 			temp2.push(data[i].id);
 		}
+		// console.log(data[i].id)
+		// console.log(temp)
+		// console.log(path)
 	}
 	if(temp.length > 0)
 	{
-		path.push(temp)
-		ids.push(temp2)
+		path[floor] = temp
+		ids[floor] = temp2
 	}
 	console.log(ids);
 	console.log(path);
