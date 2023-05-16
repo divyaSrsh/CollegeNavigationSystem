@@ -1,17 +1,17 @@
-import axios from "axios";
-
-const data = {
-	'src': 'CS_101',
-	'dest': 'CS_302',
-	'dept': 'cse'
-};
-  
-axios.post('http://127.0.0.1:5000/shortestpath', data)
-.then(response => {
-	// Handle the response from the API
-	// console.log(response.data);
-	let length = 3
-	let data = response.data.path;
+export default function splitPath(data, length)
+{
+	// const data = {
+	// 	'src': 'CS_101',
+	// 	'dest': 'CS_302',
+	// 	'dept': 'cse'
+	// };
+	  
+	// axios.post('http://127.0.0.1:5000/shortestpath', data)
+	// .then(response => {
+		// Handle the response from the API
+		// console.log(response.data);
+	// let length = 3
+	// let data = response.data.path;
 	let path = Array.from({ length }, () => []);
 	let ids = [];
 	// console.log(data);
@@ -41,10 +41,12 @@ axios.post('http://127.0.0.1:5000/shortestpath', data)
 		path[floor] = temp
 		ids[floor] = temp2
 	}
-	console.log(ids);
-	console.log(path);
-})
-.catch(error => {
-	// Handle any errors that occurred during the request
-	console.error(error);
-});
+	// console.log(ids);
+	// console.log(path);
+	return( [path, ids])
+	// })
+	// .catch(error => {
+	// 	// Handle any errors that occurred during the request
+	// 	console.error(error);
+	// });
+}
