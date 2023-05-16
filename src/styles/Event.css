@@ -26,7 +26,52 @@
     color: #7209B7;
     padding-right: 30px;
     text-align: center;
+    border-bottom: 2px double #b80000;
+    /* position: relative;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  color: #080808;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s; */
 }
+
+  /* h3 em {
+    font-style: normal;
+    font-weight: 600;
+  }
+  
+  /* === HEADING STYLE #1 === */
+  /* .e-heading h3 {
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+  }
+  .e-heading h3:before {
+    width: 28px;
+    height: 5px;
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    margin-left: -14px;
+    background-color: #b80000;
+  }
+  .e-heading h3:after {
+    width: 100px;
+    height: 1px;
+    display: block;
+    content: "";
+    position: relative;
+    margin-top: 25px;
+    left: 50%;
+    margin-left: -50px;
+    background-color: #b80000;
+  } */ */
 
 .e-right{
     /* display: flex; */
@@ -38,11 +83,13 @@
     padding-left: 25px;
 }
 .e-right-card{
+    color: rgb(22, 3, 3);
     display: flex;
     overflow-x: auto;
     width: 80%;
-    height: 100%;
-    padding-right: 10px;
+    height: 150%;
+    padding-right: 20px;
+    margin-top: 30px;
     
 }
 .e-card-img{
@@ -98,7 +145,7 @@
 .e-details-container{
     font-size: 15px;
     padding-right: 10px;
-    text-align: end;
+    text-align: center;
     text-decoration: none;
 }
 a:link { text-decoration: none; }

@@ -64,6 +64,9 @@ function Eee() {
           <Link to="/MCA" className="left-nav-links">
             MCA
           </Link>
+          <Link to="/MAIN" className='left-nav-links'>
+            MECH
+            </Link>
           <Link to="/CIVIL" className="left-nav-links ">
             CIVIL
           </Link>

@@ -4,10 +4,11 @@ import Home from "./pages/Home";
 import Login  from  "./pages/Login";
 import Event from "./pages/Event";
 import Navigationbar from "./components/Navbar";
-import {  BrowserRouter as Router,  Routes ,Route } from "react-router-dom"
+import {  BrowserRouter as Router,  Routes ,Route, useNavigate } from "react-router-dom"
 import DeptMap from "./components/Department";
 import Mca from "./pages/Mca";
 import Cse from "./pages/Cse";
+import Mech from "./pages/Mech";
 import Civil from "./pages/Civil";
 import Eee from "./pages/Eee";
 import Profile from "./pages/Profile";
@@ -19,7 +20,9 @@ import Org from "./pages/Org";
 // import Navigation from "./pages/Navigation";
 
 function App() {
-  const[nav,setNav]=useState(true)
+  const[nav,setNav]=useState(true);
+  // const [login, setLogin] = React.useState(false);
+  // const navigate = useNavigate();
   return (
     <div className="App">
       
@@ -31,7 +34,11 @@ function App() {
           <Route path="/CSE" element={<Cse/>} />
           {/* <Route path="/Navi" element={<Navigation />} /> */}
           <Route path="/CIVIL" element={<Civil/>} />
-          <Route path="/login" element={<Login/>} />
+          <Route path="/MAIN" element={<Mech/>} />
+          <Route path="/login" element={<Login/>}/>
+          {/* <Route path="/login" element={<Login/>}> */}
+            {/* {login ? useNavigate("/profile")  : <LoginPage setLogin={setLogin} />} */}
+          {/* </Route> */}
           <Route path="/event" element={<Event/>} />
           <Route path="/dept" element={<DeptMap nav={nav} />} />
           <Route path="/EEE" element={<Eee/>} />

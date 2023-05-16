@@ -57,7 +57,7 @@ const ShowEvent = () => {
         </div>
         <div className="se-right">
           <div>
-            <h3 className="event-heading">Events</h3>
+            <h3 className="event-heading">EVENTS</h3>
             <div className="se-right-card">
               {items.map((item) => {
                 return (
