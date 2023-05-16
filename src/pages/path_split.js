@@ -12,8 +12,9 @@ export default function splitPath(data, length)
 		// console.log(response.data);
 	// let length = 3
 	// let data = response.data.path;
-	let path = Array.from({ length }, () => []);
-	let ids = [];
+	// let path = Array.from({ length }, () => []);
+	let path = {};
+	let ids = {};
 	// console.log(data);
 	let floor = Number(data[0].z);
 	let temp = [], temp2 = []
@@ -43,7 +44,7 @@ export default function splitPath(data, length)
 	}
 	// console.log(ids);
 	// console.log(path);
-	return( [path, ids])
+	return( { 'path': path, 'ids': ids}	)
 	// })
 	// .catch(error => {
 	// 	// Handle any errors that occurred during the request

@@ -13,10 +13,13 @@ axios.post('http://127.0.0.1:5000/shortestpath', data)
 	let length = 3
 	let data = response.data.path;
 	let paths, ids
-	[paths, ids] = splitPath(data, length);
-	console.log(ids);
-	console.log(paths);
-
+	let res = splitPath(data, length);
+	// console.log(ids);
+	console.log(res);
+	for( let i = 0; i < length; i ++)
+	{
+		console.log(res.path[i])
+	}
 })
 .catch(error => {
 	// Handle any errors that occurred during the request
