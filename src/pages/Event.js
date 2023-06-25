@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 // import { Routes, Route, useNavigate } from "react-router-dom";
 import "../styles/Event.css";
+import { Form } from "react-bootstrap";
 
 const Event = () => {
   const [items, setItems] = useState([]);
+  const [searchItems, setSearchItens] = useState([]);
 
   useEffect(() => {
     fetchItems();
@@ -14,10 +16,19 @@ const Event = () => {
     try {
       const response = await axios.get("http://localhost:5000/events");
       setItems(response.data.events);
+      setSearchItens(response.data.events);
       // console.log(response.data)
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const handleSearch = (e) => {
+    // console.log(items);
+    const search = items.filter((x) => {
+      if (x.title.toLowerCase().includes(e.target.value)) return x;
+    });
+    setSearchItens(search);
   };
 
   return (
@@ -26,39 +37,63 @@ const Event = () => {
       {/* <div className="event-right"> */}
       <div>
         <h3 className="e-heading">Events</h3>
-        <div className="e-right-card">
-          {items.map((item) => {
-            return(
-                <div
-            style={{
-              backgroundColor: "#7209B7",
-              width: "215px",
-              height: "fit-content",
-              marginRight: "25px",
-            }}
-          >
-            <div className="e-card-image-container">
-              <img
-                src={item.image}
-                style={{ width: "210px", height: "210px" }}
-                className="image"
-              />
-            </div>
-            <div className="e-card-title">{item.title}</div>
-            <div className="e-card-venue-container">
-              <div className="e-card-venue">{item.location}</div>
-            </div>
-            <div className="e-card-date-container">
-              <div className="e-card-date">{item.datetime.split()[0].replace('GMT','')}</div>
-              {/* <div className="e-card-date-label">10:30am</div> */}
-            </div>
-            <div className="e-details-container">
-              {item.description}
-            </div>
+        <div className="w-100 d-flex justify-content-end">
+          <div>
+            <Form.Control
+              type="text"
+              className="event-search p-0 ps-2 m-0"
+              placeholder="Search Event"
+              onChange={handleSearch}
+            />
+            <Form.Group className="mt-2 d-flex align-items-center">
+              <Form.Label>Filter By Department</Form.Label>
+              <Form.Control
+                as="select"
+                className="event-filter"
+                aria-label="Default select example"
+              >
+                <option>Department</option>
+                <option value="1">Computer Science</option>
+                <option value="2">EEE</option>
+                <option value="3">MCA</option>
+                <option value="3">Civil</option>
+                <option value="3">Mechanical</option>
+              </Form.Control>
+            </Form.Group>
           </div>
-            )
+        </div>
+        <div className="e-right-card">
+          {searchItems.map((item) => {
+            return (
+              <div
+                style={{
+                  backgroundColor: "#7209B7",
+                  width: "215px",
+                  height: "fit-content",
+                  marginRight: "25px",
+                }}
+              >
+                <div className="e-card-image-container">
+                  <img
+                    src={item.image}
+                    style={{ width: "210px", height: "210px" }}
+                    className="image"
+                  />
+                </div>
+                <div className="e-card-title">{item.title}</div>
+                <div className="e-card-venue-container">
+                  <div className="e-card-venue">{item.location}</div>
+                </div>
+                <div className="e-card-date-container">
+                  <div className="e-card-date">
+                    {item.datetime.split()[0].replace("GMT", "")}
+                  </div>
+                  {/* <div className="e-card-date-label">10:30am</div> */}
+                </div>
+                <div className="e-details-container">{item.description}</div>
+              </div>
+            );
           })}
-          
         </div>
       </div>
       {/* </div> */}

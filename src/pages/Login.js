@@ -10,7 +10,6 @@ import {useNavigate} from "react-router-dom"
 function Login() {
   const navigate = useNavigate();
   const [username, setUsername] = useState(null);
-  const navigate = useNavigate()
   const [pswd, setPswd] = useState("");
   const [login, setLogin] = useState(0); // 0-not login start 1- login 2-invalid
 
