@@ -1,5 +1,5 @@
 .e-main {
-    height: calc(100vh -  71px);
+    min-height: calc(100vh -  71px);
     background-color: #87CEEB;
     padding: 30px 50px;
     font-family: 'Ibarra Real Nova', serif;
@@ -154,6 +154,10 @@ a:link { text-decoration: none; }
   max-width: 300px;
 }
 
-.event.filter {
+.event-filter {
   max-width: 300px;
+}
+
+.filter-label {
+  white-space: nowrap;
 }

@@ -31,6 +31,15 @@ const Event = () => {
     setSearchItens(search);
   };
 
+  const handleFilter = (e) => {
+    console.log(e.target.value);
+    const search = items.filter((x) => {
+      console.log(x.location);
+      if (x.location.toUpperCase().includes(e.target.value)) return x;
+    });
+    setSearchItens(search);
+  };
+
   return (
     <div className="e-main">
       {/* <Box className="e-box-main"> */}
@@ -45,19 +54,23 @@ const Event = () => {
               placeholder="Search Event"
               onChange={handleSearch}
             />
-            <Form.Group className="mt-2 d-flex align-items-center">
-              <Form.Label>Filter By Department</Form.Label>
+            <Form.Group className="mt-2 d-flex align-items-center justify-content-between">
+              <Form.Label className="filter-label">
+                Filter By Department
+              </Form.Label>
               <Form.Control
                 as="select"
-                className="event-filter"
+                className="event-filter ms-2"
                 aria-label="Default select example"
+                onChange={handleFilter}
               >
-                <option>Department</option>
-                <option value="1">Computer Science</option>
-                <option value="2">EEE</option>
-                <option value="3">MCA</option>
-                <option value="3">Civil</option>
-                <option value="3">Mechanical</option>
+                <option value="">All</option>
+                <option value="CS">Computer Science</option>
+                <option value="EEE">EEE</option>
+                <option value="ECE">ECE</option>
+                <option value="MCA">MCA</option>
+                <option value="CE">Civil</option>
+                <option value="A">Mechanical</option>
               </Form.Control>
             </Form.Group>
           </div>
