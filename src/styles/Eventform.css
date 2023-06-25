@@ -9,23 +9,42 @@
   .eventform {
     display: flex;
     flex-direction: column;
-    align-items:center;
+    /* align-items:center; */
     /* align-self: center; */
     gap: 2px;
     max-width: 500px;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    align-content: space-between;
+    overflow: auto;
   }
   
-  label {
+  .FormRow {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    align-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  label {
+    width: 150px;
     padding-left: 10px;
     /* padding-right: 0px; */
   }
+
+  .FormRow input {
+    flex: 1
+  }
   
+  .FormRow textarea {
+    flex: 1
+  }
+
+  .eventform button {
+    max-width: 30%;
+  }
+
   input[type='text'],
   input[type='file'],
   input[type='date'],
@@ -48,4 +67,14 @@
   
   button:hover {
     background-color: #0e81d3;
+  }
+
+  @media (max-width: 600px) {
+    .FormRow{
+      flex-direction: column;
+    }
+  
+    .form-row label {
+      width: auto;
+    }
   }

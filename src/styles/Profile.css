@@ -1,6 +1,6 @@
 .profile-main {
-    height: calc(100vh -  71px);
-    background-color: #87CEEB;
+    height: calc(100vh);
+    background-color: #ffffffd7;
     padding: 30px 50px;
     font-family: 'Ibarra Real Nova', serif;
 }
@@ -9,7 +9,7 @@
     height: calc(100vh -  130px);
     border: 2px solid #6d1ca3;
     padding: 10px;
-    background-color: #7209B7;
+    background-color: #87CEEB;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
@@ -43,6 +43,10 @@
     padding: 10px 0px ;
     border-right: 1.7px solid black;
     height: calc(100vh -  130px);
+}
+
+.profile-right {
+    overflow: auto;
 }
 
 .left-buttons{

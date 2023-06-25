@@ -95,68 +95,84 @@ const EventForm = () => {
 
   return (
     <form className="eventform" onSubmit={handleSubmit}>
-      <label>
-        Title :
-        <input
-          type="text"
-          name="title"
-          value={event.title}
-          onChange={handleChange}
-        />
-      </label>
+      <div className="FormRow">
+        <label>
+          Title :
+          </label>
+          <input
+            type="text"
+            name="title"
+            value={event.title}
+            onChange={handleChange}
+          />
+      </div>
       <br />
-      <label>
-        Location :
-        <input
-          type="text"
-          name="location"
-          value={event.location}
-          onChange={handleChange}
-        />
-      </label>
+      <div className="FormRow">
+        <label>
+          Location :
+          </label>
+          <input
+            className="FormInput"
+            type="text"
+            name="location"
+            value={event.location}
+            onChange={handleChange}
+          />
+      </div>
       <br />
-      <label>
-        Date :
-        <input
-          type="date"
-          name="date"
-          value={event.date}
-          onChange={handleChange}
-        />
-      </label>
+      <div className="FormRow">
+        <label>
+          Date :
+          </label>
+          <input
+            className="FormInput"
+            type="date"
+            name="date"
+            value={event.date}
+            onChange={handleChange}
+          />
+      </div>
       <br />
-      <label>
-        Time :
-        <input
-          type="time"
-          name="time"
-          value={event.time}
-          onChange={handleChange}
-        />
-      </label>
+      <div className="FormRow">
+        <label>
+          Time :
+          </label>
+          <input
+            className="FormInput"
+            type="time"
+            name="time"
+            value={event.time}
+            onChange={handleChange}
+          />
+      </div>
       <br />
-      <label>
-        Poster :
-        <input
-          type="file"
-          ref={inputRef}
-          name="image"
-          accept="image/*"
-          onChange={handleUpload}
-        />
-      </label>
+      <div className="FormRow">
+        <label>
+          Poster :
+          </label>
+          <input
+            className="FormInput"
+            type="file"
+            ref={inputRef}
+            name="image"
+            accept="image/*"
+            onChange={handleUpload}
+          />
+      </div>
       <br />
-      <label>
-        Description :
-        <textarea
-          type="textarea"
-          name="description"
-          value={event.description}
-          onChange={handleChange}
-        />
-      </label>
+      <div className="FormRow">
+        <label>
+          Description :
+          </label>
+          <textarea
+            className="FormInput"
+            type="textarea"
+            name="description"
+            value={event.description}
+            onChange={handleChange}
+          />
+      </div>
       <br />
-
       <button type="submit">Submit</button>
     </form>
   );
