@@ -5,6 +5,8 @@ import "../styles/Eventform.css";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import storage from "../firebase";
 import { useRef } from "react";
+import api_data from "../api.json"
+
 const EventForm = () => {
   const [event, setEvent] = useState({
     title: "",
@@ -70,7 +72,7 @@ const EventForm = () => {
       };
       console.log(reqData);
       const response = await axios.post(
-        "http://localhost:5000/events",
+        "http://"+ api_data.ip + ":" + api_data.api_port + "/events",
         reqData
       );
       // .then((res)=>{});

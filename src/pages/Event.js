@@ -3,7 +3,7 @@ import axios from "axios";
 // import { Routes, Route, useNavigate } from "react-router-dom";
 import "../styles/Event.css";
 import { Form } from "react-bootstrap";
-
+import api_data from "../api.json"
 const Event = () => {
   const [items, setItems] = useState([]);
   const [searchItems, setSearchItens] = useState([]);
@@ -14,7 +14,8 @@ const Event = () => {
 
   const fetchItems = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/events");
+      // console.log("http://"+data.ip + ":" + data.api_port + "events")
+      const response = await axios.get("http://"+ api_data.ip + ":" + api_data.api_port + "/events");
       setItems(response.data.events);
       setSearchItens(response.data.events);
       // console.log(response.data)

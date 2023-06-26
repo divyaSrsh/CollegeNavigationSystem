@@ -7,6 +7,7 @@ import { Box } from "@mui/material";
 import edit from "../assets/images/edit-icon.png";
 import event1 from "../assets/images/event1.jpeg";
 import event2 from "../assets/images/event2.jpeg";
+import api_data from "../api.json"
 
 const ShowEvent = () => {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ const ShowEvent = () => {
 
   const fetchItems = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/events");
+      const response = await axios.get("http://"+ api_data.ip + ":" + api_data.api_port + "/events");
       setItems(response.data.events);
       // console.log(response.data)
     } catch (error) {

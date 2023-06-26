@@ -5,6 +5,8 @@ import { Col, Container, Row, Form, Button } from "react-bootstrap";
 import loginIcon from "../assets/loginIcon.png";
 import "../styles/Login.css";
 import {useNavigate} from "react-router-dom"
+import api_data from "../api.json"
+
 // import { useLoginCred } from '../hooks/getLoginCred';
 
 function Login() {
@@ -28,7 +30,7 @@ function Login() {
       console.log(username + " " + pswd);
       await axios
         .post(
-          "http://127.0.0.1:5000/login",
+          "http://"+api_data.ip + ":" + api_data.api_port + "/login",
           {
             username: username,
             password: pswd,

@@ -1,5 +1,6 @@
 import axios from "axios";
 import splitPath from "./path_split.js";
+import api_data from "../api.json"
 
 const data = {
 	'src': 'CS_101',
@@ -7,7 +8,7 @@ const data = {
 	'dept': 'cse'
 };
 	
-axios.post('http://127.0.0.1:5000/shortestpath', data)
+axios.post("http://"+ api_data.ip + ":" + api_data.api_port + "/shortestpath", data)
 .then(response => {
 
 	let length = 3
