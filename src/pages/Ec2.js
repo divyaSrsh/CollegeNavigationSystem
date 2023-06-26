@@ -1,15 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
-import ce0 from "../assets/images/CE0.png";
-import ce1 from "../assets/images/CE1.png";
-import ce2 from "../assets/images/CE2.png";
-import "../styles/Civil.css";
+import Ec2_0 from "../assets/images/ec2_0.png"
+import Ec2_1 from "../assets/images/ec2_1.png"
+import Ec2_2 from "../assets/images/ec2_2.png"
+import  {Link} from "react-router-dom"
+import "../styles/Ec2.css"
 import { Slider } from "@mui/material";
 
-function Civil() {
+function Ec2(){
   const canvasRef = useRef(null);
-  const floorData = [ce0, ce1, ce2];
-  const [currentImage, setCurrentImage] = useState(ce0);
+  const floorData = [Ec2_0, Ec2_1, Ec2_2];
+  const [currentImage, setCurrentImage] = useState(Ec2_0);
   const [floorImg, setFloorImage] = useState(0);
 
   useEffect(() => {
@@ -20,13 +20,12 @@ function Civil() {
     img.src = currentImage;
     context.clearRect(0, 0, canvas.width, canvas.height);
     img.onload = () => {
-      canvas.width = img.naturalWidth;
+      canvas.width = img.naturalWidth;  
       canvas.height = img.naturalHeight;
       context.drawImage(img, 0, 0, canvas.width, canvas.height);
     };
   }, [currentImage]);
- 
-
+                                          
   const marks = [
     {
       value: 0,
@@ -49,10 +48,10 @@ function Civil() {
     }
   };
 
-  return (
+  return(
     <div>
-      <div className="civil-main">
-        <div className="civil-left text-center">
+      <div className="Ec2-main">
+        <div className='Ec2-left text-center'>
           <Link to="/CSE" className='left-nav-links'>
             CSE
             </Link>
@@ -79,29 +78,29 @@ function Civil() {
             </Link>
             <Link to="/EC" className="left-nav-links">
             EC
-            </Link>
+          </Link>
             <Link to="/EC2" className='left-nav-links'>
             EC-II
             </Link>
         </div>
         <div className="d-flex justify-content-around w-100">
-          <div className="civil-mid">
+          <div className="Ec2-mid">
             <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
           </div>
-          <div className="civil-right">
+          <div className="Ec2-right">
             <Slider
-              aria-label="Custom marks"
-              defaultValue={0}
-              step={50}
-              orientation="vertical"
-              valueLabelDisplay="off"
-              marks={marks}
-              onChange={handleImageChange}
+            aria-label="Custom marks"
+            defaultValue={0}
+            step={50}
+            orientation="vertical"
+            valueLabelDisplay="off"
+            marks={marks}
+            onChange={handleImageChange}
             />
           </div>
         </div>
-      </div>
     </div>
+  </div>
   );
 }
-export default Civil;
+export default Ec2;

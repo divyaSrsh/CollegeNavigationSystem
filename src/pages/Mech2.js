@@ -1,16 +1,18 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import ce0 from "../assets/images/CE0.png";
-import ce1 from "../assets/images/CE1.png";
-import ce2 from "../assets/images/CE2.png";
-import "../styles/Civil.css";
+import a0 from "../assets/images/me2_0.png";
+import a1 from "../assets/images/me2_1.png";
+import a2 from "../assets/images/me2_2.png";
+import {Nav,Button,Form} from "react-bootstrap";
+import "../styles/Mech2.css";
 import { Slider } from "@mui/material";
 
-function Civil() {
+function Mech2() {
   const canvasRef = useRef(null);
-  const floorData = [ce0, ce1, ce2];
-  const [currentImage, setCurrentImage] = useState(ce0);
+  const floorData = [a0, a1, a2];
+  const [currentImage, setCurrentImage] = useState(a0);
   const [floorImg, setFloorImage] = useState(0);
+  const [locationImg,setLocationImg]=useState(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -23,9 +25,16 @@ function Civil() {
       canvas.width = img.naturalWidth;
       canvas.height = img.naturalHeight;
       context.drawImage(img, 0, 0, canvas.width, canvas.height);
+      context.lineWidth = 20; 
+      context.strokeStyle = "red";
+      context.beginPath()
+      context.moveTo(950,700)
+      context.lineTo(2125,700)
+      context.lineTo(2125,900)
+      context.stroke()
+      context.closePath()
     };
   }, [currentImage]);
- 
 
   const marks = [
     {
@@ -48,12 +57,37 @@ function Civil() {
       setCurrentImage(floorData[val / 50]);
     }
   };
+  const handleClick = (event) => {
+    event.preventDefault(); // Prevent default submission
+    if (locationImg) {
+      context.drawImage(img, 0, 0, canvas.width, canvas.height);
+    }
+  };
+
+  const onChange = (event) => {
+    setValue(event.target.value);
+  };
 
   return (
     <div>
-      <div className="civil-main">
-        <div className="civil-left text-center">
-          <Link to="/CSE" className='left-nav-links'>
+      <div className="Mech2-main">
+      {/* <div  className='search-btn '>
+        <Nav className="me-auto">
+          <Form className="d-flex" >
+          <Form.Control
+            type="search"
+            placeholder="Search"
+            className="me-2"
+            aria-label="Search"
+            onChange={onChange}
+          />
+          <Button className='search-side-btn'  variant="outline-success" onClick={handleClick} >Search</Button>
+        </Form>
+           
+        </Nav>
+      </div> */}
+        <div className="Mech2-left text-center">
+            <Link to="/CSE" className='left-nav-links'>
             CSE
             </Link>
             <Link to="/MCA" className='left-nav-links '>
@@ -85,10 +119,10 @@ function Civil() {
             </Link>
         </div>
         <div className="d-flex justify-content-around w-100">
-          <div className="civil-mid">
+          <div className="Mech2-mid">
             <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
           </div>
-          <div className="civil-right">
+          <div className="Mech2-right">
             <Slider
               aria-label="Custom marks"
               defaultValue={0}
@@ -104,4 +138,4 @@ function Civil() {
     </div>
   );
 }
-export default Civil;
+export default Mech2;

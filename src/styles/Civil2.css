@@ -1,0 +1,57 @@
+.Civil2-main{
+    display: flex;
+    flex-direction: row;
+}
+
+.Civil2-left{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 10%;
+}
+
+img{
+    padding: 6px 10px;
+    height: calc(100vh - 71px);
+}
+
+.Civil2-right{
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 100px;
+    color: #05386B;
+}
+
+.left-nav-links  {
+    cursor: pointer;
+    padding: 30px 10px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid;
+    border-right:1px solid ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#379683;
+    font-size: 21px;
+    font-weight: 500;
+    color: #EDF5E1!important;
+    text-decoration: none;
+} 
+
+.Civil2-right .css-xxsb21-MuiSlider-markLabel, .Civil2-right .MuiSlider-markLabelActive {
+    font-size: 15px;
+    font-weight: 600;
+    color: green;
+    padding-left: 3px;
+}
+
+.Civil2-right .css-fk6q5t-MuiSlider-root {
+    color: black;
+}
+.search-btn{
+    top: 80px;
+    left: 115px;
+    
+}
