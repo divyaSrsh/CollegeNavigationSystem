@@ -4,7 +4,7 @@ import a0 from "../assets/images/me2_0.png";
 import a1 from "../assets/images/me2_1.png";
 import a2 from "../assets/images/me2_2.png";
 import {Nav,Button,Form} from "react-bootstrap";
-import "../styles/Mech2.css";
+import "../styles/dept.css";
 import { Slider } from "@mui/material";
 
 function Mech2() {
@@ -69,8 +69,7 @@ function Mech2() {
   };
 
   return (
-    <div>
-      <div className="Mech2-main">
+      <div className="dept-main">
       {/* <div  className='search-btn '>
         <Nav className="me-auto">
           <Form className="d-flex" >
@@ -86,7 +85,7 @@ function Mech2() {
            
         </Nav>
       </div> */}
-        <div className="Mech2-left text-center">
+        <div className="dept-left text-center">
             <Link to="/CSE" className='left-nav-links'>
             CSE
             </Link>
@@ -118,11 +117,10 @@ function Mech2() {
             EC-II
             </Link>
         </div>
-        <div className="d-flex justify-content-around w-100">
-          <div className="Mech2-mid">
+          <div className="dept-mid">
             <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
           </div>
-          <div className="Mech2-right">
+          <div className="dept-right">
             <Slider
               aria-label="Custom marks"
               defaultValue={0}
@@ -133,9 +131,9 @@ function Mech2() {
               onChange={handleImageChange}
             />
           </div>
+          <div className="dept-path">
         </div>
       </div>
-    </div>
   );
 }
 export default Mech2;

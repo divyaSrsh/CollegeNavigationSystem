@@ -107,6 +107,9 @@ function Mca(){
           onChange={handleImageChange}
           />
         </div>
+        <div className="dept-path">
+        </div>
+
     </div>
   );
 }

@@ -79,7 +79,7 @@ function Civil2() {
             </Link>
         </div>
           <div className="dept-mid">
-            <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
+            <canvas ref={canvasRef}/>
           </div>
           <div className="dept-right">
             <Slider
@@ -91,6 +91,9 @@ function Civil2() {
               marks={marks}
               onChange={handleImageChange}
             />
+          </div>
+          <div className="dept-path">
+
           </div>
       </div>
   );
