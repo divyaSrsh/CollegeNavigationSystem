@@ -1,12 +1,14 @@
 .addevent-main {
-    height: calc(100vh -  71px);
+    height: calc(100vh);
     background-color: #87CEEB;
     padding: 30px 50px;
     font-family: 'Ibarra Real Nova', serif;
+    overflow: auto;
 }
 
 .addevent-box-main{
-    height: calc(100vh -  113px);
+    padding: 5%;
+    /* height: calc(95vh); */
     border: 2px solid #6d1ca3;
     padding: 10px;
     background-color: #7209B7;
@@ -15,6 +17,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    overflow: auto;
 }
 
 .left-name{
@@ -40,9 +43,11 @@
 }
 
 .addevent-left{
+    display: flex;
+    flex-direction: column;
     padding: 10px 0px ;
     border-right: 1.7px solid black;
-    height: calc(100vh -  113px);
+    /* height: calc(100vh -  113px); */
 }
 
 .left-buttons{
@@ -73,7 +78,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+    align-items: center;
+    overflow: auto;
 }
 
 .addevent-name{
@@ -89,6 +95,15 @@
 .addevent-name-form{
     align-items: center;
 }
+
+@media (max-width: 600px) {
+
+    .addevent-box-main{
+        flex-direction: column;
+    }
+
+}
+
 /* .container {
     display: flex;
     flex-direction: column;
