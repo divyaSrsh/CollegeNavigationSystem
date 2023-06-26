@@ -4,7 +4,7 @@ import a0 from "../assets/images/me_floor.png";
 import a1 from "../assets/images/me_1.png";
 import a2 from "../assets/images/me_2.png";
 import {Nav,Button,Form} from "react-bootstrap";
-import "../styles/Mech.css";
+import "../styles/dept.css";
 import { Slider } from "@mui/material";
 
 function Mech() {
@@ -25,14 +25,14 @@ function Mech() {
       canvas.width = img.naturalWidth;
       canvas.height = img.naturalHeight;
       context.drawImage(img, 0, 0, canvas.width, canvas.height);
-      context.lineWidth = 20; 
-      context.strokeStyle = "red";
-      context.beginPath()
-      context.moveTo(950,700)
-      context.lineTo(2125,700)
-      context.lineTo(2125,900)
-      context.stroke()
-      context.closePath()
+      // context.lineWidth = 20; 
+      // context.strokeStyle = "red";
+      // context.beginPath()
+      // context.moveTo(950,700)
+      // context.lineTo(2125,700)
+      // context.lineTo(2125,900)
+      // context.stroke()
+      // context.closePath()
     };
   }, [currentImage]);
 
@@ -69,8 +69,7 @@ function Mech() {
   };
 
   return (
-    <div>
-      <div className="mech-main">
+    <div className="dept-main">
       {/* <div  className='search-btn '>
         <Nav className="me-auto">
           <Form className="d-flex" >
@@ -86,7 +85,7 @@ function Mech() {
            
         </Nav>
       </div> */}
-        <div className="mech-left text-center">
+        <div className="dept-left text-center">
           <Link to="/CSE" className="left-nav-links left-active-link">
             CSE
           </Link>
@@ -103,24 +102,21 @@ function Mech() {
             EEE
           </Link>
         </div>
-        <div className="d-flex justify-content-around w-100">
-          <div className="mech-mid">
-            <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
-          </div>
-          <div className="mech-right">
-            <Slider
-              aria-label="Custom marks"
-              defaultValue={0}
-              step={50}
-              orientation="vertical"
-              valueLabelDisplay="off"
-              marks={marks}
-              onChange={handleImageChange}
-            />
-          </div>
+        <div className="dept-mid">
+          <canvas ref={canvasRef}/>
+        </div>
+        <div className="dept-right">
+          <Slider
+            aria-label="Custom marks"
+            defaultValue={0}
+            step={50}
+            orientation="vertical"
+            valueLabelDisplay="off"
+            marks={marks}
+            onChange={handleImageChange}
+          />
         </div>
       </div>
-    </div>
   );
 }
 export default Mech;

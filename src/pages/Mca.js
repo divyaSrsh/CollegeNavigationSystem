@@ -3,7 +3,7 @@ import mca0 from "../assets/images/MCA0.png"
 import mca1 from "../assets/images/MCA1.png"
 import mca2 from "../assets/images/MCA2.png"
 import  {Link} from "react-router-dom"
-import "../styles/Mca.css"
+import "../styles/dept.css"
 import { Slider } from "@mui/material";
 
 function Mca(){
@@ -17,15 +17,26 @@ function Mca(){
     const context = canvas.getContext("2d");
 
     const img = new Image();
+
+    // function handleResize() {
+    //   // canvas.height = window.innerHeight;
+    //   // canvas.width = window.innerWidth;
+    //   canvas.width = img.naturalWidth;
+    //   canvas.height = img.naturalHeight;
+    //   context.clearRect(0, 0, canvas.width, canvas.height);
+    //   context.drawImage(img, 0, 0, canvas.width, canvas.height);
+    // }
+
     img.src = currentImage;
     context.clearRect(0, 0, canvas.width, canvas.height);
     img.onload = () => {
-      canvas.width = img.naturalWidth;  
+      canvas.width = img.naturalWidth;
       canvas.height = img.naturalHeight;
       context.drawImage(img, 0, 0, canvas.width, canvas.height);
     };
+    // window.addEventListener('resize', handleResize)
   }, [currentImage]);
-                                          
+
   const marks = [
     {
       value: 0,
@@ -49,9 +60,8 @@ function Mca(){
   };
 
   return(
-    <div>
-      <div className="mca-main">
-        <div className='mca-left text-center'>
+      <div className="dept-main">
+        <div className='dept-left text-center'>
             <Link to="/CSE" className='left-nav-links'>
             CSE
             </Link>
@@ -68,24 +78,21 @@ function Mca(){
             EEE
             </Link>
         </div>
-        <div className="d-flex justify-content-around w-100">
-          <div className="mca-mid">
-            <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
-          </div>
-          <div className="mca-right">
-            <Slider
-            aria-label="Custom marks"
-            defaultValue={0}
-            step={50}
-            orientation="vertical"
-            valueLabelDisplay="off"
-            marks={marks}
-            onChange={handleImageChange}
-            />
-          </div>
+        <div className="dept-mid">
+          <canvas ref={canvasRef}/>
+        </div>
+        <div className="dept-right">
+          <Slider
+          aria-label="Custom marks"
+          defaultValue={0}
+          step={50}
+          orientation="vertical"
+          valueLabelDisplay="off"
+          marks={marks}
+          onChange={handleImageChange}
+          />
         </div>
     </div>
-  </div>
   );
 }
 export default Mca;

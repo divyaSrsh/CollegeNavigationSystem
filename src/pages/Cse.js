@@ -4,7 +4,7 @@ import cse0 from "../assets/images/CSE0.png";
 import cse1 from "../assets/images/CSE1.png";
 import cse2 from "../assets/images/CSE2.png";
 import {Nav,Button,Form} from "react-bootstrap";
-import "../styles/Cse.css";
+import "../styles/dept.css";
 import { Slider } from "@mui/material";
 
 function Cse() {
@@ -25,14 +25,14 @@ function Cse() {
       canvas.width = img.naturalWidth;
       canvas.height = img.naturalHeight;
       context.drawImage(img, 0, 0, canvas.width, canvas.height);
-      context.lineWidth = 20; 
-      context.strokeStyle = "red";
-      context.beginPath()
-      context.moveTo(950,700)
-      context.lineTo(2125,700)
-      context.lineTo(2125,900)
-      context.stroke()
-      context.closePath()
+      // context.lineWidth = 20; 
+      // context.strokeStyle = "red";
+      // context.beginPath()
+      // context.moveTo(950,700)
+      // context.lineTo(2125,700)
+      // context.lineTo(2125,900)
+      // context.stroke()
+      // context.closePath()
     };
   }, [currentImage]);
 
@@ -69,8 +69,7 @@ function Cse() {
   };
 
   return (
-    <div>
-      <div className="cse-main">
+      <div className="dept-main">
       {/* <div  className='search-btn '>
         <Nav className="me-auto">
           <Form className="d-flex" >
@@ -86,7 +85,7 @@ function Cse() {
            
         </Nav>
       </div> */}
-        <div className="cse-left text-center">
+        <div className="dept-left text-center">
           <Link to="/CSE" className="left-nav-links left-active-link">
             CSE
           </Link>
@@ -103,24 +102,21 @@ function Cse() {
             EEE
           </Link>
         </div>
-        <div className="d-flex justify-content-around w-100">
-          <div className="cse-mid">
-            <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
-          </div>
-          <div className="cse-right">
-            <Slider
-              aria-label="Custom marks"
-              defaultValue={0}
-              step={50}
-              orientation="vertical"
-              valueLabelDisplay="off"
-              marks={marks}
-              onChange={handleImageChange}
-            />
-          </div>
+        <div className="dept-mid">
+          <canvas ref={canvasRef}/>
+        </div>
+        <div className="dept-right">
+          <Slider
+            aria-label="Custom marks"
+            defaultValue={0}
+            step={50}
+            orientation="vertical"
+            valueLabelDisplay="off"
+            marks={marks}
+            onChange={handleImageChange}
+          />
         </div>
       </div>
-    </div>
   );
 }
 export default Cse;

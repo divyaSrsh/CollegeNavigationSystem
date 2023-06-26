@@ -4,7 +4,7 @@ import Eee1 from "../assets/images/Eee0.png";
 import Eee2 from "../assets/images/Eee1.png";
 import Eee3 from "../assets/images/Eee2.png";
 import Eee0 from "../assets/images/Eeeb.png";
-import "../styles/Eee.css";
+import "../styles/dept.css";
 import { Slider } from "@mui/material";
 
 function Eee() {
@@ -55,9 +55,8 @@ function Eee() {
 
 
   return (
-    <div>
-      <div className="eee-main">
-        <div className="eee-left text-center">
+      <div className="dept-main">
+        <div className="dept-left text-center">
           <Link to="/CSE" className="left-nav-links ">
             CSE
           </Link>
@@ -74,25 +73,22 @@ function Eee() {
             EEE
           </Link>
         </div>
-        <div className="d-flex justify-content-around w-90">
-          <div className="eee-mid">
-            <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
-          </div>
-          <div className="eee-right">
-            <Slider
-              aria-label="Custom marks"
-              defaultValue={0}
-              step={33}
-              max={99}
-              orientation="vertical"
-              valueLabelDisplay="off"
-              marks={marks}
-              onChange={handleImageChange}
-            />
-          </div>
+        <div className="dept-mid">
+          <canvas ref={canvasRef} />
+        </div>
+        <div className="dept-right">
+          <Slider
+            aria-label="Custom marks"
+            defaultValue={0}
+            step={33}
+            max={99}
+            orientation="vertical"
+            valueLabelDisplay="off"
+            marks={marks}
+            onChange={handleImageChange}
+          />
         </div>
       </div>
-    </div>
   );
 }
 export default Eee;

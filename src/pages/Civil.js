@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ce0 from "../assets/images/CE0.png";
 import ce1 from "../assets/images/CE1.png";
 import ce2 from "../assets/images/CE2.png";
-import "../styles/Civil.css";
+import "../styles/dept.css";
 import { Slider } from "@mui/material";
 
 function Civil() {
@@ -50,9 +50,8 @@ function Civil() {
   };
 
   return (
-    <div>
-      <div className="civil-main">
-        <div className="civil-left text-center">
+      <div className="dept-main">
+        <div className="dept-left text-center">
           <Link to="/CSE" className="left-nav-links">
             CSE
           </Link>
@@ -69,24 +68,21 @@ function Civil() {
             EEE
           </Link>
         </div>
-        <div className="d-flex justify-content-around w-100">
-          <div className="civil-mid">
-            <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
-          </div>
-          <div className="civil-right">
-            <Slider
-              aria-label="Custom marks"
-              defaultValue={0}
-              step={50}
-              orientation="vertical"
-              valueLabelDisplay="off"
-              marks={marks}
-              onChange={handleImageChange}
-            />
-          </div>
+        <div className="dept-mid">
+          <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
+        </div>
+        <div className="dept-right">
+          <Slider
+            aria-label="Custom marks"
+            defaultValue={0}
+            step={50}
+            orientation="vertical"
+            valueLabelDisplay="off"
+            marks={marks}
+            onChange={handleImageChange}
+          />
         </div>
       </div>
-    </div>
   );
 }
 export default Civil;
