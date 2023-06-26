@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ce0 from "../assets/images/ec1_0.png";
 import ce1 from "../assets/images/ec1_1.png";
-import "../styles/Ec.css";
+import "../styles/dept.css";
 import { Slider } from "@mui/material";
 
 function Ec() {
@@ -45,9 +45,8 @@ function Ec() {
   };
 
   return (
-    <div>
-      <div className="Ec-main">
-        <div className="Ec-left text-center">
+      <div className="dept-main">
+        <div className="dept-left text-center">
             <Link to="/CSE" className='left-nav-links'>
             CSE
             </Link>
@@ -76,14 +75,13 @@ function Ec() {
             EC
             </Link>
             <Link to="/EC2" className='left-nav-links'>
-            EC-II
+            dept-II
             </Link>
         </div>
-        <div className="d-flex justify-content-around w-100">
-          <div className="Ec-mid">
+          <div className="dept-mid">
             <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
           </div>
-          <div className="Ec-right">
+          <div className="dept-right">
             <Slider
               aria-label="Custom marks"
               defaultValue={0}
@@ -94,9 +92,7 @@ function Ec() {
               onChange={handleImageChange}
             />
           </div>
-        </div>
       </div>
-    </div>
   );
 }
 export default Ec;

@@ -4,7 +4,7 @@ import Arch0 from "../assets/images/arch_b2.png";
 import Arch1 from "../assets/images/arch_basement1.png";
 import Arch2 from "../assets/images/Arch_ground.png";
 import Arch3 from "../assets/images/arch_1.png";
-import "../styles/Arch.css";
+import "../styles/dept.css";
 import { Slider } from "@mui/material";
 
 function Arch() {
@@ -55,9 +55,8 @@ function Arch() {
 
 
   return (
-    <div>
-      <div className="Arch-main">
-        <div className="Arch-left text-center">
+      <div className="dept-main">
+        <div className="dept-left text-center">
             <Link to="/CSE" className='left-nav-links'>
             CSE
             </Link>
@@ -89,25 +88,22 @@ function Arch() {
             EC-II
             </Link>
         </div>
-        <div className="d-flex justify-content-around w-90">
-          <div className="Arch-mid">
-            <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
-          </div>
-          <div className="Arch-right">
-            <Slider
-              aria-label="Custom marks"
-              defaultValue={0}
-              step={33}
-              max={99}
-              orientation="vertical"
-              valueLabelDisplay="off"
-              marks={marks}
-              onChange={handleImageChange}
-            />
-          </div>
+        <div className="dept-mid">
+          <canvas ref={canvasRef}/>
+        </div>
+        <div className="dept-right">
+          <Slider
+            aria-label="Custom marks"
+            defaultValue={0}
+            step={33}
+            max={99}
+            orientation="vertical"
+            valueLabelDisplay="off"
+            marks={marks}
+            onChange={handleImageChange}
+          />
         </div>
       </div>
-    </div>
   );
 }
 export default Arch;

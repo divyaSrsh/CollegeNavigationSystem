@@ -72,7 +72,15 @@ img{
 .search-btn{
     top: 80px;
     left: 115px;
-    
+}
+
+.search-bar {
+    /* display: flex; */
+    /* position: relative; */
+    margin: 10%;
+    /* padding-left: 5%; */
+    margin-left: 15%;
+    justify-content: flex-start;
 }
 
 @media (max-aspect-ratio: 1/1) {

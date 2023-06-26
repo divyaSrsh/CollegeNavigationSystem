@@ -25,14 +25,14 @@ function Mech2() {
       canvas.width = img.naturalWidth;
       canvas.height = img.naturalHeight;
       context.drawImage(img, 0, 0, canvas.width, canvas.height);
-      context.lineWidth = 20; 
-      context.strokeStyle = "red";
-      context.beginPath()
-      context.moveTo(950,700)
-      context.lineTo(2125,700)
-      context.lineTo(2125,900)
-      context.stroke()
-      context.closePath()
+      // context.lineWidth = 20; 
+      // context.strokeStyle = "red";
+      // context.beginPath()
+      // context.moveTo(950,700)
+      // context.lineTo(2125,700)
+      // context.lineTo(2125,900)
+      // context.stroke()
+      // context.closePath()
     };
   }, [currentImage]);
 

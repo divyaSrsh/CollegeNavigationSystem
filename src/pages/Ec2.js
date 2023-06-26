@@ -3,7 +3,7 @@ import Ec2_0 from "../assets/images/ec2_0.png"
 import Ec2_1 from "../assets/images/ec2_1.png"
 import Ec2_2 from "../assets/images/ec2_2.png"
 import  {Link} from "react-router-dom"
-import "../styles/Ec2.css"
+import "../styles/dept.css"
 import { Slider } from "@mui/material";
 
 function Ec2(){
@@ -49,9 +49,8 @@ function Ec2(){
   };
 
   return(
-    <div>
-      <div className="Ec2-main">
-        <div className='Ec2-left text-center'>
+      <div className="dept-main">
+        <div className='dept-left text-center'>
           <Link to="/CSE" className='left-nav-links'>
             CSE
             </Link>
@@ -83,24 +82,21 @@ function Ec2(){
             EC-II
             </Link>
         </div>
-        <div className="d-flex justify-content-around w-100">
-          <div className="Ec2-mid">
-            <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
-          </div>
-          <div className="Ec2-right">
-            <Slider
-            aria-label="Custom marks"
-            defaultValue={0}
-            step={50}
-            orientation="vertical"
-            valueLabelDisplay="off"
-            marks={marks}
-            onChange={handleImageChange}
-            />
-          </div>
+        <div className="dept-mid">
+          <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
+        </div>
+        <div className="dept-right">
+          <Slider
+          aria-label="Custom marks"
+          defaultValue={0}
+          step={50}
+          orientation="vertical"
+          valueLabelDisplay="off"
+          marks={marks}
+          onChange={handleImageChange}
+          />
         </div>
     </div>
-  </div>
   );
 }
 export default Ec2;

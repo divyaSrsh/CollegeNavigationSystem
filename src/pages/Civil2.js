@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ce0 from "../assets/images/ce2_0.png";
 import ce1 from "../assets/images/ce2_1.png";
-import "../styles/Civil2.css";
+import "../styles/dept.css";
 import { Slider } from "@mui/material";
 
 function Civil2() {
@@ -45,9 +45,8 @@ function Civil2() {
   };
 
   return (
-    <div>
-      <div className="Civil2-main">
-        <div className="Civil2-left text-center">
+      <div className="dept-main">
+        <div className="dept-left text-center">
             <Link to="/CSE" className='left-nav-links'>
             CSE
             </Link>
@@ -79,11 +78,10 @@ function Civil2() {
             EC-II
             </Link>
         </div>
-        <div className="d-flex justify-content-around w-100">
-          <div className="Civil2-mid">
+          <div className="dept-mid">
             <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
           </div>
-          <div className="Civil2-right">
+          <div className="dept-right">
             <Slider
               aria-label="Custom marks"
               defaultValue={0}
@@ -94,9 +92,7 @@ function Civil2() {
               onChange={handleImageChange}
             />
           </div>
-        </div>
       </div>
-    </div>
   );
 }
 export default Civil2;
