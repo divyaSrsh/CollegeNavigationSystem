@@ -88,19 +88,34 @@ function Mech() {
         <div className="dept-left text-center">
           <Link to="/CSE" className="left-nav-links left-active-link">
             CSE
-          </Link>
-          <Link to="/MCA" className="left-nav-links">
+            </Link>
+            <Link to="/MCA" className='left-nav-links '>
             MCA
-          </Link>
-          <Link to="/MAIN" className="left-nav-links">
-            MECH
-          </Link>
-          <Link to="/CIVIL" className="left-nav-links ">
+            </Link>
+            <Link to="/CIVIL" className='left-nav-links'>
             CIVIL
-          </Link>
-          <Link to="/EEE" className="left-nav-links">
+            </Link>
+            <Link to="/CIVIL2" className='left-nav-links'>
+            CIVIL-II
+            </Link>
+            <Link to="/Arch" className='left-nav-links'>
+            ARCHIE
+            </Link>
+            <Link to="/MAIN" className='left-nav-links'>
+            MECH
+            </Link>
+            <Link to="/MAIN2" className='left-nav-links'>
+            MECH-II
+            </Link>
+            <Link to="/EEE" className='left-nav-links'>
             EEE
+            </Link>
+            <Link to="/EC" className="left-nav-links">
+            EC
           </Link>
+            <Link to="/EC2" className='left-nav-links'>
+            EC-II
+            </Link>
         </div>
         <div className="dept-mid">
           <canvas ref={canvasRef}/>

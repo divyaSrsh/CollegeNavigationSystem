@@ -1,15 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import ce0 from "../assets/images/CE0.png";
-import ce1 from "../assets/images/CE1.png";
-import ce2 from "../assets/images/CE2.png";
-import "../styles/dept.css";
+import Arch0 from "../assets/images/arch_b2.png";
+import Arch1 from "../assets/images/arch_basement1.png";
+import Arch2 from "../assets/images/Arch_ground.png";
+import Arch3 from "../assets/images/arch_1.png";
+import "../styles/Arch.css";
 import { Slider } from "@mui/material";
 
-function Civil() {
+function Arch() {
   const canvasRef = useRef(null);
-  const floorData = [ce0, ce1, ce2];
-  const [currentImage, setCurrentImage] = useState(ce0);
+  const floorData = [Arch0, Arch1, Arch2, Arch3];
+  const [currentImage, setCurrentImage] = useState(Arch0);
   const [floorImg, setFloorImage] = useState(0);
 
   useEffect(() => {
@@ -25,34 +26,39 @@ function Civil() {
       context.drawImage(img, 0, 0, canvas.width, canvas.height);
     };
   }, [currentImage]);
- 
 
   const marks = [
     {
       value: 0,
+      label: "Basement Floor",
+    },
+    {
+      value: 33,
       label: "Ground Floor",
     },
     {
-      value: 50,
+      value: 66,
       label: "First Floor",
     },
     {
-      value: 100,
+      value: 99,
       label: "Second Floor",
     },
   ];
 
   const handleImageChange = (e, val) => {
-    if (val / 50 !== floorImg) {
-      setFloorImage(val / 50);
-      setCurrentImage(floorData[val / 50]);
+    if (val / 33 !== floorImg){
+      setFloorImage(val / 33);
+      setCurrentImage(floorData[val / 33]);
     }
   };
 
+
   return (
-      <div className="dept-main">
-        <div className="dept-left text-center">
-          <Link to="/CSE" className="left-nav-links">
+    <div>
+      <div className="Arch-main">
+        <div className="Arch-left text-center">
+            <Link to="/CSE" className='left-nav-links'>
             CSE
             </Link>
             <Link to="/MCA" className='left-nav-links '>
@@ -83,21 +89,27 @@ function Civil() {
             EC-II
             </Link>
         </div>
-        <div className="dept-mid">
-          <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
-        </div>
-        <div className="dept-right">
-          <Slider
-            aria-label="Custom marks"
-            defaultValue={0}
-            step={50}
-            orientation="vertical"
-            valueLabelDisplay="off"
-            marks={marks}
-            onChange={handleImageChange}
-          />
+        <div className="d-flex justify-content-around w-90">
+          <div className="Arch-mid">
+            <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
+          </div>
+          <div className="Arch-right">
+            <Slider
+              aria-label="Custom marks"
+              defaultValue={0}
+              step={33}
+              max={99}
+              orientation="vertical"
+              valueLabelDisplay="off"
+              marks={marks}
+              onChange={handleImageChange}
+            />
+          </div>
         </div>
       </div>
+    </div>
   );
 }
-export default Civil;
+export default Arch;
+
+

@@ -1,16 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import cse0 from "../assets/images/CSE0.png";
-import cse1 from "../assets/images/CSE1.png";
-import cse2 from "../assets/images/CSE2.png";
+import a0 from "../assets/images/me2_0.png";
+import a1 from "../assets/images/me2_1.png";
+import a2 from "../assets/images/me2_2.png";
 import {Nav,Button,Form} from "react-bootstrap";
-import "../styles/dept.css";
+import "../styles/Mech2.css";
 import { Slider } from "@mui/material";
 
-function Cse() {
+function Mech2() {
   const canvasRef = useRef(null);
-  const floorData = [cse0, cse1, cse2];
-  const [currentImage, setCurrentImage] = useState(cse0);
+  const floorData = [a0, a1, a2];
+  const [currentImage, setCurrentImage] = useState(a0);
   const [floorImg, setFloorImage] = useState(0);
   const [locationImg,setLocationImg]=useState(0);
 
@@ -25,14 +25,14 @@ function Cse() {
       canvas.width = img.naturalWidth;
       canvas.height = img.naturalHeight;
       context.drawImage(img, 0, 0, canvas.width, canvas.height);
-      // context.lineWidth = 20; 
-      // context.strokeStyle = "red";
-      // context.beginPath()
-      // context.moveTo(950,700)
-      // context.lineTo(2125,700)
-      // context.lineTo(2125,900)
-      // context.stroke()
-      // context.closePath()
+      context.lineWidth = 20; 
+      context.strokeStyle = "red";
+      context.beginPath()
+      context.moveTo(950,700)
+      context.lineTo(2125,700)
+      context.lineTo(2125,900)
+      context.stroke()
+      context.closePath()
     };
   }, [currentImage]);
 
@@ -69,7 +69,8 @@ function Cse() {
   };
 
   return (
-      <div className="dept-main">
+    <div>
+      <div className="Mech2-main">
       {/* <div  className='search-btn '>
         <Nav className="me-auto">
           <Form className="d-flex" >
@@ -85,8 +86,8 @@ function Cse() {
            
         </Nav>
       </div> */}
-        <div className="dept-left text-center">
-          <Link to="/CSE" className="left-nav-links left-active-link">
+        <div className="Mech2-left text-center">
+            <Link to="/CSE" className='left-nav-links'>
             CSE
             </Link>
             <Link to="/MCA" className='left-nav-links '>
@@ -116,23 +117,25 @@ function Cse() {
             <Link to="/EC2" className='left-nav-links'>
             EC-II
             </Link>
-           
         </div>
-        <div className="dept-mid">
-          <canvas ref={canvasRef}/>
-        </div>
-        <div className="dept-right">
-          <Slider
-            aria-label="Custom marks"
-            defaultValue={0}
-            step={50}
-            orientation="vertical"
-            valueLabelDisplay="off"
-            marks={marks}
-            onChange={handleImageChange}
-          />
+        <div className="d-flex justify-content-around w-100">
+          <div className="Mech2-mid">
+            <canvas ref={canvasRef} style={{ height: "calc(100vh - 71px)" }} />
+          </div>
+          <div className="Mech2-right">
+            <Slider
+              aria-label="Custom marks"
+              defaultValue={0}
+              step={50}
+              orientation="vertical"
+              valueLabelDisplay="off"
+              marks={marks}
+              onChange={handleImageChange}
+            />
+          </div>
         </div>
       </div>
+    </div>
   );
 }
-export default Cse;
+export default Mech2;
